@@ -1,0 +1,48 @@
+.dsk--hide {
+    @include media($screen-sm) {
+        display: none !important;
+    }
+}
+
+.mobile--hide {
+    @include media($max-sm) {
+        display: none !important;
+    }
+}
+
+.large--hide {
+    @include media($screen-md) {
+        display: none !important;
+    }
+}
+
+.medium--hide {
+    @include media($max-md) {
+        display: none !important;
+    }
+}
+
+.margin--center {
+    margin: 0 auto;
+    display: block;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+
+.relative {
+    position: relative;
+}
+.block {
+    display: block;
+}
+
+.table {
+    display: table;
+}
+
+.inline-block {
+    display: inline-block;
+}

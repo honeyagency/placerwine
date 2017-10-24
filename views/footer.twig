@@ -1,1 +1,23 @@
-Copyright {{"now"|date('Y')}}
+<footer>
+<nav role="navigation max-wrap margin--center">
+	<ul class="flex flex--wrap justify--center">
+		{% for item in footermenu.get_items %}
+			<li class="nav-item {{item.classes | join(' ')}}">
+
+				<a class="nav-link color--blue font--large font--bold" href="{{item.get_link}}">{{item.title}}</a>
+				{% if item.get_children %}
+					<ul class="nav nav-drop">
+						{% for child in item.get_children %}
+							<li class="nav-drop-item inline--block">
+								<a class="nav-link color--red font--large font--bold" href="{{child.get_link}}">{{child.title}}</a>
+								{% if not loop.last %}|{% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+</nav>
+</footer>
+{# Copyright {{"now"|date('Y')}} #}

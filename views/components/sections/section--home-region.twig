@@ -1,0 +1,29 @@
+<section class="section--home-region max-wrap margin--center spacing--gutter">
+	<div class="flex flex--wrap justify--between">
+		<div class="grid--sm-two-thirds flex flex--wrap justify--between">
+			{% for image in home.region.gallery %}
+				{% if loop.index == 1 %}
+					<div class="grid--one margin--bot-1"><img align="right" data-original="{{image|resize(1284,856)}}" alt="{{image.post_title}}" class="grid--three-fourths" data-original-set="{{image|resize(640)}} 640w, {{image|resize(1000,666)}} 750w, {{image|resize(612,408)}} 768w, {{image|resize(678,452)}} 834w, {{image|resize(870,578)}} 1024w, {{image|resize(1284,856)}} 1320w"></div>
+				{% elseif loop.index == 2 %}
+					<div class="grid--half grid--sm-two-fifths"><img data-original="{{image|resize(664,442)}}" alt="{{image.post_title}}" data-original-set="{{image|resize(542,360)}} 640w, {{image|resize(652,434)}} 750w, {{image|resize(306,204)}} 768w, {{image|resize(340,226)}} 834w, {{image|resize(442,294)}} 1024w, {{image|resize(664,442)}} 1320w"></div>
+				{% elseif loop.index == 3 %}
+					<div class="grid--half grid--sm-three-fifths"><img data-original="{{image|resize(1018,678)}}" alt="{{image.post_title}}" data-original-set="{{image|resize(542,360)}} 640w, {{image|resize(652,434)}} 750w, {{image|resize(480,320)}} 768w, {{image|resize(532,356)}} 834w, {{image|resize(684,456)}} 1024w, {{image|resize(1018,678)}} 1320w"></div>
+				{% else %}
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div class="grid--two-thirds grid--sm-third flex flex--wrap align--items-center relative">
+			{% for image in home.region.gallery %}
+				{% if loop.index == 4 %}
+					<img data-original="{{image|resize(840,1264)}}" alt="{{image.post_title}}" data-original-set="{{image|resize(736,720)}} 640w, {{image|resize(884,740)}} 750w, {{image|resize(392,592)}} 768w, {{image|resize(436,656)}} 834w, {{image|resize(564,848)}} 1024w, {{image|resize(840,1264)}} 1320w">
+					<i class="icon-wine-glass" data-grunticon-embed></i>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+	<div class="block--home-region-text grid--half grid--md-two-fifths bg--brown-light spacing--horiz-2 spacing--vert-2">
+	{% if home.region.title %}<h2>{{home.region.title}}</h2>{% endif %}
+	{% if home.region.link %}<a class="font--large font--bold" href="{{home.region.link.url}}" title="{{home.region.link.title}}" target="{{home.region.link.target}}">{{home.region.link.title}}</a>{% endif %}
+</div>
+	
+</section>

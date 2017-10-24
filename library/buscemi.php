@@ -8,7 +8,7 @@ function bc_dashboard_widget_function()
 }
 function bc_add_dashboard_widgets()
 {
-    wp_add_dashboard_widget('wp_dashboard_widget', 'Buscemi Docs', 'bc_dashboard_widget_function');
+    wp_add_dashboard_widget('wp_dashboard_widget', 'Placer Wine Documentation', 'bc_dashboard_widget_function');
 }
 add_action('wp_dashboard_setup', 'bc_add_dashboard_widgets');
 
@@ -60,6 +60,12 @@ function buscemi_scripts()
         wp_enqueue_script('livereload');
     }
 
+    wp_register_script('lazyload', get_template_directory_uri() . '/app/vendors/lazyload.min.js', null, false, true);
+    wp_enqueue_script('lazyload');
+    wp_register_script('appear', get_template_directory_uri() . '/app/vendors/appear.min.js', null, false, true);
+    wp_enqueue_script('appear');
+    wp_register_script('picturefill', get_template_directory_uri() . '/app/vendors/picturefill.min.js', null, false, true);
+    wp_enqueue_script('picturefill');
     wp_enqueue_style('buscemi_style', get_template_directory_uri() . '/app/main.min.css', null, null, null);
     wp_enqueue_script('buscemi_script', get_template_directory_uri() . '/app/app.min.js', array('jquery'), null, null, true);
 }
@@ -76,6 +82,7 @@ add_filter('upload_mimes', 'cc_mime_types');
 // Setting up ACF options page
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page();
+    acf_add_options_page('Footer');
 }
 
 require_once 'functions--custom-fields.php';

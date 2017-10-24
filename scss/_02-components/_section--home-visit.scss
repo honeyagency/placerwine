@@ -1,0 +1,16 @@
+.section--home-visit {
+    .block--home-visit-text {
+        position: relative;
+        top: -2em;
+
+        @include media($max-sm) {
+            margin: 0 auto;
+        }
+
+
+        @include media($screen-sm) {
+            margin-right: 4em;
+            top: -4em;
+        }
+    }
+}

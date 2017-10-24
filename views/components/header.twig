@@ -1,0 +1,9 @@
+<header class="header spacing--vert-1 max-wrap margin--center">
+	<div class="hidden--mob">{% include 'components/blocks/block--header-social.twig' %}</div>
+	{% include 'components/blocks/block--search-modal.twig' %}
+	<a class="hdr-logo-link margin--center table" href="/" title="{{site.name}} Logo" rel="home"><i class="icon-logo" data-grunticon-embed></i></a>
+	{% include 'components/navigation.twig' %}
+	<div class="hidden--dsk">
+		{% include 'components/blocks/block--header-social.twig' %}
+	</div>
+</header>

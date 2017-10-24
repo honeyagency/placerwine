@@ -1,0 +1,31 @@
+.block--header-social {
+	text-align: center;
+	a {
+        i {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+
+            svg {
+                width: 100%;
+                height: 100%;
+
+                path {}
+            }
+        }
+    }
+	@include media($screen-xs){}
+	@include media($screen-sm){
+		text-align: right;
+		a{
+			i{
+				  width: 13px;
+            height: 13px;
+			}
+		}
+	}
+	@include media($screen-md){}
+	@include media($screen-lg){}
+	@include media($screen-xl){}
+    
+}

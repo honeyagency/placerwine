@@ -1,0 +1,83 @@
+.block--search-modal {
+    transition: transform 0.5s $base-cubic;
+    transform: translateX(-50%) translateY(-250%);
+    position: absolute;
+    padding-top: 3em !important;
+    top: 50%;
+    left: 50%;
+    z-index: 99;
+
+    form {
+        margin-top: 2em;
+    }
+
+    .close {
+        display: inline-block;
+        float: right;
+        height: 20px;
+        position: relative;
+        margin-bottom: -20px;
+
+        .icon-close {
+            height: 20px;
+            width: 20px;
+            display: inline-block;
+
+            svg {
+                height: 100%;
+                width: 100%;
+
+                path {
+                    fill: $black;
+                    stroke: $black;
+                }
+            }
+        }
+    }
+
+    @include media($screen-sm) {
+        input.search-field {
+            min-width: 74%;
+        }
+
+        button {
+            min-width: 24%;
+        }
+    }
+
+
+    .links {
+        margin-top: 2em;
+    }
+}
+
+body {
+    &:after {
+        transform: translateY(-100%);
+        content: ' ';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        background-color: map-get($red, main);
+        z-index: -1;
+        position: absolute;
+        display: block;
+        transition:  z-index 2s ease, transform 0.3s $base-cubic, opacity 0.2s $base-cubic;
+    }
+
+    &.search-is-open {
+        .block--search-modal {
+            transition: transform 0.5s $base-cubic;
+            transform: translateY(-50%) translateX(-50%);
+        }
+
+        &:after {
+            opacity: 1;
+            z-index: 9;
+            transform: translateY(0);
+            transition: z-index 2s ease, transform 0.3s $base-cubic, opacity 0.2s $base-cubic;
+        }
+    }
+}
