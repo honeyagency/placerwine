@@ -65,7 +65,7 @@ function prepareHomepageFields()
         'title'   => get_field('field_59e926899befe'),
         'link'    => get_field('field_59e9268d9beff'),
     );
-    $exploreImageId = get_field('field_59e926379bef9');
+    $exploreImageId = get_field('field_59e926f49bf02');
     if ($exploreImageId != null) {
         $exploreImage = new TimberImage($exploreImageId);
     } else {
@@ -88,13 +88,29 @@ function prepareHomepageFields()
             }
         }
     }
+    $eventArray = array(
+        'posts' => $events,
+        'title' => get_field('field_59f124fe31101'),
+        'link'  => get_field('field_59f1250931102'),
+    );
     $home = array(
         'location' => $location,
         'visit'    => $visit,
         'region'   => $region,
         'explore'  => $explore,
-        'events'   => $events,
+        'events'   => $eventArray,
     );
     return $home;
+
+}
+function prepareEventFields()
+{
+    $event = array(
+        'start_date'  => get_field('field_59e92c5b89c00'),
+        'end_date'    => get_field('field_59e92c7c89c01'),
+        'time'        => get_field('field_59e92ccd89c03'),
+        'description' => get_field('field_59f125e6903fa'),
+    );
+    return $event;
 
 }

@@ -37,8 +37,8 @@
 	padding-left: .7em * $grid;
 
     @include media($screen-sm) {
-	padding-right: 3em * $grid;
-	padding-left: 3em * $grid;
+	padding-right: 3em * $grid / 2;
+	padding-left: 3em * $grid / 2;
     }
 }
 .spacing--mob-bot-1{@include media($max-sm){padding-bottom: 1em * $grid;}}
@@ -59,8 +59,8 @@
 }
 
     @include media($screen-sm) {
-	padding-right: 3em * $grid;
-	padding-left: 3em * $grid;
+	padding-right: 3em * $grid / 2;
+	padding-left: 3em * $grid / 2;
     }
 }
 

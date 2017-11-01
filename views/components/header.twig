@@ -1,9 +1,6 @@
-<header class="header spacing--vert-1 max-wrap margin--center">
-	<div class="hidden--mob">{% include 'components/blocks/block--header-social.twig' %}</div>
-	{% include 'components/blocks/block--search-modal.twig' %}
-	<a class="hdr-logo-link margin--center table" href="/" title="{{site.name}} Logo" rel="home"><i class="icon-logo" data-grunticon-embed></i></a>
+<header class="header main--header max-wrap margin--center flex flex--wrap align--items-baseline">
+	<a class="hdr-logo-link" href="/" title="{{site.name}} Logo" rel="home"><i class="icon-logo-tab" data-grunticon-embed></i></a>
 	{% include 'components/navigation.twig' %}
-	<div class="hidden--dsk">
-		{% include 'components/blocks/block--header-social.twig' %}
-	</div>
+	<div class="grid--third">{% include 'components/blocks/block--header-social.twig' %}</div>
+	{% include 'components/blocks/block--search-modal.twig' %}
 </header>

@@ -8,3 +8,35 @@
         }
     }
 }
+
+.main--header {
+    .hdr-logo-link {
+        i {
+            display: block;
+            margin-left: 2em;
+            position: relative;
+            bottom: -3em;
+            margin-top: -3em;
+        }
+    }
+}
+
+.icon-i80 {
+    width: 75px;
+    display: inline-block;
+
+    svg {
+        width: 100%;
+    }
+}
+
+.footer-social {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+}

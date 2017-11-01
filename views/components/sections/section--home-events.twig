@@ -1,3 +1,17 @@
-<section class="section--home-events">
-	
+<section class="section--home-events flex flex--wrap justify--between spacing--gutter">
+	<div class="grid--one flex flex--wrap justify--between spacing--vert-2 align--items-baseline">
+		{% if home.events.title %}<h2>{{home.events.title}}</h2>{% endif %}
+		{% if home.events.link %}<a class="font--large font--bold" href="{{home.events.link.url}}" title="{{home.events.link.title}}" target="{{home.events.link.target}}"><h4>{{home.events.link.title}}</h4></a>{% endif %}
+	</div>
+	{% for event in home.events.posts %}
+		<div class="block--home-event grid--one grid--sm-third">
+			<span class="icon-tab color--white font--bold font--medium"><span>{{event.event.start_date|date('M d')}} {% if event.event.end_date %}- {{event.event.end_date|date('d')}}{% endif %}</span></span>
+			<img src="{{event.image}}" class="">
+			<div class="spacing--horiz-1 spacing--vert-1 font--medium color--black">
+				<h4>{{event.title}}</h4>
+				{{event.event.description}}<br>
+				<a href="{{event.link}}">Read More</a>
+			</div>
+		</div>
+	{% endfor %}
 </section>

@@ -7,3 +7,104 @@ nav {
         }
     }
 }
+
+.main-nav {
+    li {
+        &.menu-item-has-children {
+            position: relative;
+
+            .nav-link {
+                &:first-of-type {
+                    z-index: 4;
+                    position: relative;
+                }
+            }
+
+            &:before {
+                content: ' ';
+                display: block;
+                width: 100%;
+                position: absolute;
+                z-index: 2;
+                height: 100%;
+                background-color: map-get($brown, light);
+            }
+
+            ul {
+                z-index: 0;
+                position: relative;
+                margin: 0 auto;
+                margin-top: 1em;
+                max-width: 80%;
+                transition: top 0.2s $base-cubic, opacity 0.2s $base-cubic;
+                transition-delay: .35s;
+                height: 0;
+                top: -100%;
+                opacity: 0;
+
+                li {
+                    padding: .5em 0;
+
+                    &:nth-of-type(n+4) {
+                        transform: translateY(-200%);
+                        transition: transform 0.2s $base-cubic;
+                        transition-delay: .35s;
+                    }
+                }
+            }
+
+            &:hover {
+                ul {
+                    transition: top 0.2s $base-cubic, opacity 0.2s $base-cubic;
+                    top: 0;
+                    opacity: 1;
+
+                    li {
+                        &:nth-of-type(n+4) {
+                            transform: translateY(0%);
+                            transition: transform 0.2s $base-cubic;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.home--header {
+    .nav-item {
+        &:nth-of-type(1), &:nth-of-type(2) {
+            border-right: 1px solid;
+        }
+
+        + span {
+            display: none;
+        }
+    }
+}
+
+.main--header {
+    .nav-item {
+        padding: 0 1em;
+
+        ul {
+            position: absolute;
+            margin: 0 auto !important;
+        }
+
+        + span {
+            z-index: 9;
+        }
+    }
+
+    .nav-drop {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150%;
+        max-width: none !important;
+
+        li {
+            width: 100%;
+        }
+    }
+}

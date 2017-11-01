@@ -32,8 +32,15 @@
     align-items: start;
 }
 
+.align--items-end {
+    align-items: flex-end;
+}
 .align--items-center {
     align-items: center;
+}
+
+.align--items-baseline {
+    align-items: baseline;
 }
 
 // 

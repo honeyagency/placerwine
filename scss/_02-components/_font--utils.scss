@@ -1,11 +1,9 @@
 .font--medium {
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 .font--large {
     font-size: 1.25em;
-
-    
 }
 
 .font--sans {
@@ -35,6 +33,10 @@
 
 .font--semi-bold {
     font-weight: 500 !important;
+}
+
+.font--standard {
+    font-weight: 400 !important;
 }
 
 .font--bold {
@@ -73,6 +75,10 @@
     text-decoration: none !important;
 }
 
+.line--1 {
+    line-height: 1;
+}
+
 .letter--1 {
     letter-spacing: 1px;
 }
@@ -84,4 +90,3 @@
 .letter--3 {
     letter-spacing: 3px;
 }
-

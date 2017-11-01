@@ -31,10 +31,10 @@
     margin: 0 auto;
 }
 
-
 .relative {
     position: relative;
 }
+
 .block {
     display: block;
 }
@@ -45,4 +45,8 @@
 
 .inline-block {
     display: inline-block;
+}
+
+.border-box {
+    box-sizing: border-box !important;
 }

@@ -84,12 +84,8 @@ function getSinglePost($posttype = null)
         'link'       => get_permalink(),
     );
     if ($posttype == 'event') {
-        $customEventData = array(
-            'start_date' => get_field('field_59e92c5b89c00'),
-            'end_date'   => get_field('field_59e92c7c89c01'),
-            'time'       => get_field('field_59e92ccd89c03'),
-        );
-        $singlePostArray['event'] = $singlePostArray;
+     
+        $singlePostArray['event'] = prepareEventFields();
     }
     // Restores original Post Data
     wp_reset_postdata();
