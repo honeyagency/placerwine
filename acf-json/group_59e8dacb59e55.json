@@ -92,6 +92,25 @@
             "mime_types": ""
         },
         {
+            "key": "field_59fe3e0520533",
+            "label": "Map Center",
+            "name": "map_center",
+            "type": "google_map",
+            "value": null,
+            "instructions": "This is the default center of any map on the website.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "center_lat": "",
+            "center_lng": "",
+            "zoom": "",
+            "height": ""
+        },
+        {
             "key": "field_59e8dbbd815ed",
             "label": "404 Text",
             "name": "404_text",
@@ -283,5 +302,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1509579932
+    "modified": 1509834284
 }

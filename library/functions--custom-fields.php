@@ -13,8 +13,9 @@ function prepareSiteOptions()
         $defaultImage = null;
     }
     $defaults = array(
-        'image' => $defaultImage,
-        '404'   => get_field('field_59e8dbbd815ed', 'options'),
+        'image'    => $defaultImage,
+        'location' => get_field('field_59fe3e0520533', 'options'),
+        '404'      => get_field('field_59e8dbbd815ed', 'options'),
     );
     if (have_rows('field_59e8e305d478f', 'options')) {
         $links = array();
