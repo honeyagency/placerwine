@@ -1,9 +1,11 @@
-<div class="max-wrap margin--center spacing--gutter grid--one">
-	<div class="margin--horiz-1">
+<div class="max-wrap margin--center spacing--gutter">
+	<div class="block--breadcrumbs">
+
 		{% if post.post_parent != 0 %}
 			<a href="{{ post.parent.link }}" class="color--black font--bold">{{ post.parent.title }} <span class="font--standard">> </span></a><span class="color--black">{{post.title}}</span>
 		{% elseif post.post_type != 'page' %}
-			<a href="{{site.url}}/{{post.type}}" class="color--black font--bold">{{post.type|capitalize}}s <span class="font--standard">> </span></a><span class="color--black">{{post.title}}</span>
+
+			<a href="{{site.url}}/{{post.type.rewrite.slug}}" class="color--black font--bold">{{post.type.labels.name}} <span class="font--standard">> </span></a><span class="color--black">{{post.title}}</span>
 		{% endif %}
 	</div>
 </div>

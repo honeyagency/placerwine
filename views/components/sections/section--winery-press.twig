@@ -1,0 +1,15 @@
+<section class="section--winery-press grid--one flex flex--wrap justify--between align--items-start border--1 spacing--vert-2">
+	<h2 class="grid--one grid--two-fifths font--standard color--brown-dark">Press</h2>
+	<div class="border--grid grid--one grid--three-fifths flex flex--wrap justify--between">
+		{# {{winery.deets|print_r}} #}
+		<div class="block--press font--medium">
+			{% for press in winery.deets.press %}
+				<div class="margin--bot-1">
+				{% if press.image %}<div class="press--img"><img align="" width="60" src="{{press.image|resize(120)}}"></div>{% endif %}
+				<strong>{{press.publication}}</strong>
+				<p>{{press.title}}{% if press.link.url%} <a href="{{press.link.url}}" target="{{press.link.target}}">{{press.link.title}}</a>{% endif%}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,13 @@
+.section--winery-list {
+    max-width: 1000px;
+
+    .block--winery {
+        // border: 1px solid;
+   
+    }
+}
+
+.winery--details, .border--grid {
+    border-bottom: 1px solid map-get($brown, dark);
+    padding-bottom: 2em;
+}

@@ -9,7 +9,7 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
     $args = array(
         'posts_per_page' => $limit,
         'post_type'      => $posttype,
-        'order'          => 'DESC',
+        'order'          => 'ASC',
         'orderby'        => $order,
 
     );
@@ -86,6 +86,8 @@ function getSinglePost($posttype = null)
     if ($posttype == 'event') {
      
         $singlePostArray['event'] = prepareEventFields();
+    }elseif ($posttype == 'winery') {
+        $singlePostArray['winery'] = prepareWineryFields();
     }
     // Restores original Post Data
     wp_reset_postdata();

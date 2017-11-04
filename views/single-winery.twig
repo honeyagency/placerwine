@@ -2,16 +2,13 @@
 {% block content %}
 <section class="section--single-header spacing--gutter margin--center max-wrap"><img src="{{post.thumbnail}}" width="100%"></section>
 {% include 'components/blocks/block--breadcrumbs.twig' %}
-<article class="flex flex--wrap justify--around align--items-start spacing--vert-4">
-	<section class="spacing--gutter grid--half">
-		<h1>{{post.title}}</h1>
-		{# {{event|print_r}} #}
-		<p class="font--large">{{event.description}}</p>
-		{{post.content}}
-	</section>
-	<aside class="grid--sixth">
-		<img src="http://placekitten.com/g/500/500" width="100%" alt="">
-	</aside>
+<article class="flex flex--wrap justify--between align--items-start spacing--dsk-vert-4 winery-wrap margin--center">
+	{% include 'components/sections/section--winery-aside.twig' %}
+	{% include 'components/sections/section--winery-content.twig' %}
 </article>
-
+<aside class="section--winery-awards-deets spacing--gutter winery-wrap margin--center">
+	{% if winery.deets.amenities %}{% include 'components/sections/section--winery-amenities.twig' %}{% endif %}
+	{% if winery.deets.press %}{% include 'components/sections/section--winery-press.twig' %}{% endif %}
+	{% if winery.deets.awards %}{% include 'components/sections/section--winery-awards.twig' %}{% endif %}
+</aside>
 {% endblock %}

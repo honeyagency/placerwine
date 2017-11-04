@@ -6,6 +6,10 @@
     background-color: map-get($brown, dark);
 }
 
+.bg--brown-faded {
+    background-color: map-get($brown, faded);
+}
+
 .bg--blue, .bg--black {
     background-color: map-get($blue, dark);
 }

@@ -1,0 +1,34 @@
+<aside class="section--winery-aside grid--one grid--md-fourth spacing--vert-1">
+	{% if winery.sidebar.logo %}<div class="grid--one"><img width="165" class="winery-logo" src="{{winery.sidebar.logo|resize(330)}}"></div>{% endif %}
+	{% if winery.sidebar.dates %}
+		<div class="margin--bot-1 grid--tab-half">
+			<div class="font--large font--bold">Open:</div>
+			{% for date in winery.sidebar.dates %}
+				{{date}}
+			{% endfor %}
+		</div>
+	{% endif %}
+	{% if winery.sidebar.hours %}
+		<div class="margin--bot-1 grid--tab-half">
+			<div class="font--large font--bold">Hours:</div>
+			{% for hours in winery.sidebar.hours %}
+				<div>{{hours}}</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+	{% if winery.sidebar.location %}
+		<div class="grid--tab-half">
+		<div class="font--large font--bold">Where:</div>
+		<address>{{winery.sidebar.location.address}}</address>
+		<p class="font--tiny">
+			<a href="https://www.google.com/maps/place/{{winery.sidebar.location.address|replace(' ', '+')}}/@{{winery.sidebar.location.lat}},{{winery.sidebar.location.lng}}">get directions</a> | <a href="{{site.options.map}}">download map</a>
+		</p>
+	</div>
+	{% endif %}
+	{% if winery.sidebar.phone %}
+		<div class="grid--tab-half">
+		<div class="font--large font--bold">Phone:</div>
+		{{winery.sidebar.phone}}
+	</div>
+	{% endif %}
+</aside>

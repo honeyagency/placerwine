@@ -1,0 +1,9 @@
+<section class="section--winery-amenities grid--one flex flex--wrap justify--between align--items-start border--1 spacing--vert-2">
+	<h2 class="grid--one grid--two-fifths font--standard color--brown-dark">Amenities</h2>
+	<div class="border--grid grid--one grid--three-fifths flex flex--wrap justify--between">
+		<i class="icon-corkscrew inline-block" data-grunticon-embed></i>
+		<div class="block--amenities font--medium">
+			{% for amenity in winery.deets.amenities %}<span class="inline-block">{{amenity.name}}</span>{% if loop.last %}{% else %}<span class="spacing--horiz-half"> | </span>{% endif %}{% endfor %}
+		</div>
+	</div>
+</section>

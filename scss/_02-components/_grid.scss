@@ -1,5 +1,5 @@
-
 $gutter: $grid;
+
 // this variable is in variables
 
 .grid--one {
@@ -459,6 +459,15 @@ $gutter: $grid;
         }
     }
 
+    .grid--md-third-max {
+        max-width: calc(100% / 3 - (.6666666em * #{$gutter}));
+
+        &.nog {
+            flex-basis: calc(100% / 3);
+            width: calc(100% / 3);
+        }
+    }
+
     .grid--md-fourth {
         flex-basis: calc(100% / 4 - (.75em * #{$gutter}));
         width: calc(100% / 4 - (.75em * #{$gutter}));
@@ -624,6 +633,19 @@ $gutter: $grid;
         &.nog {
             flex-basis: calc(100% / 9);
             width: calc(100% / 9);
+        }
+    }
+}
+
+
+@include media($max-md) {
+    .grid--tab-half {
+        flex-basis: calc(100% / 2 - (.5em * #{$gutter}));
+        width: calc(100% / 2 - (.5em * #{$gutter}));
+
+        &.nog {
+            flex-basis: calc(100% / 2);
+            width: calc(100% / 2);
         }
     }
 }

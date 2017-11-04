@@ -114,3 +114,94 @@ function prepareEventFields()
     return $event;
 
 }
+function prepareWineryFields()
+{
+    if (have_rows('field_59fb890e85238')) {
+        $dates = array();
+        while (have_rows('field_59fb890e85238')) {
+            the_row();
+            $dates[] = get_sub_field('field_59fb89d58523e');
+        }
+    }
+    if (have_rows('field_59fb891585239')) {
+        $hours = array();
+        while (have_rows('field_59fb891585239')) {
+            the_row();
+            $hours[] = get_sub_field('field_59fb89b98523d');
+        }
+    }
+    $logoId = get_field('field_59fb8e56ffc8c');
+    $logo   = null;
+    if (!empty($logoId)) {
+        $logo = new TimberImage($logoId);
+    }
+    $content = array(
+        'content'     => get_field('field_59fdf72936ee3'),
+        'description' => get_field('field_59fba61288e3e'),
+        'events'      => get_field('field_59fdf79732e88'),
+    );
+    $amenities = get_field('field_59fe00678e7a2');
+    if (!empty($amenities)) {
+        foreach ($amenities as $term) {
+            $amenitiylist[] = new TimberTerm($term);
+        }
+    } else {
+        $amenitiylist = null;
+    }
+    if (have_rows('field_59fe148b19fce')) {
+        $press = array();
+        while (have_rows('field_59fe148b19fce')) {
+            the_row();
+            $imageId = get_sub_field('field_59fe14c019fd1');
+            $image   = null;
+            if (!empty($imageId)) {
+                $image = new TimberImage($imageId);
+            }
+            $press[] = array(
+                'image'       => $image,
+                'publication' => get_sub_field('field_59fe149a19fcf'),
+                'title'       => get_sub_field('field_59fe14ab19fd0'),
+                'link'        => get_sub_field('field_59fe14f019fd2'),
+            );
+        }
+    }
+    if (have_rows('field_59fe2e286be24')) {
+        $awards = array();
+        while (have_rows('field_59fe2e286be24')) {
+            the_row();
+            $awardImageId = get_sub_field('field_59fe2e286be25');
+            $awardImage   = null;
+            if (!empty($awardImageId)) {
+                $awardImage = new TimberImage($awardImageId);
+            }
+            $awards[] = array(
+                'image'       => $awardImage,
+
+                'publication' => get_sub_field('field_59fe2e286be26'),
+                'title'       => get_sub_field('field_59fe2e286be27'),
+                'link'        => get_sub_field('field_59fe2e286be28'),
+            );
+        }
+    }
+
+    $deets = array(
+        'amenities' => $amenitiylist,
+        'press'     => $press,
+        'awards'    => $awards,
+    );
+    $sidebar = array(
+        'logo'     => $logo,
+        'dates'    => $dates,
+        'hours'    => $hours,
+        'location' => get_field('field_59fb89208523a'),
+        'phone'    => get_field('field_59fb895d8523b'),
+        'website'  => get_field('field_59fb89918523c'),
+    );
+    $winery = array(
+        'content' => $content,
+        'deets'   => $deets,
+        'sidebar' => $sidebar,
+    );
+
+    return $winery;
+}

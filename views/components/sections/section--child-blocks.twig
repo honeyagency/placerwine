@@ -1,0 +1,14 @@
+<section class="section--child-blocks spacing--gutter max-wrap margin--center">
+	{% if post.children %}
+		{% for child in post.children %}
+			
+			<div class="block--child grid--one md--flex flex--wrap align--items-center spacing--vert-1 spacing--dsk-vert-2 {% if loop.index is even %}justify--end{% else %}justify--start{% endif %}">
+				<img class="grid--one grid--md-two-thirds order--1" src="{{child.thumbnail.src}}">
+				<div class="child--title bg--brown-light inline-block spacing--vert-1 spacing--dsk-horiz-2 spacing--dsk-vert-2 grid--md-third-max border-box {% if loop.index is even %}order--0{% else %}order--1{% endif %}">
+					<h2>{{ child.title }}</h2>
+					<a class="font--large font--bold" href="{{ child.link }}">Read More</a>
+				</div>
+			</div>
+		{% endfor %}
+	{% endif %}
+</section>

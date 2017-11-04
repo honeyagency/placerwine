@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Parent Page
  * The template for displaying all pages.
  *
  * This is the template that displays all pages by default.
@@ -26,8 +27,6 @@ $post    = new TimberPost();
 
 if (is_page('home')) {
     $context['home'] = prepareHomepageFields();
-} elseif (is_page(10)) {
-    $context['wineries'] = getCustomPosts('winery', -1, null, 'title', null, null);
 }
 $context['post'] = $post;
-Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
+Timber::render(array('page-' . $post->post_name . '.twig', 'page-parent.twig'), $context);

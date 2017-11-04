@@ -1,0 +1,20 @@
+.section--winery-aside {
+    @include media($screen-md) {
+        order: 2;
+    }
+
+
+    @include media($max-md) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        margin: 0 auto;
+        max-width: $max-wrap;
+        justify-content: space-between;
+
+        .winery-logo {
+            margin: 0 auto;
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.section--child-blocks {
+    .block--child {
+        .child--title {
+            
+            position: relative;
+
+            @include media($screen-sm) {
+            	top: -2em;
+                left: 2em;
+            }
+
+
+            @include media($screen-md) {
+                position: relative;
+                top: 4em;
+
+                &.order--1 {
+                    left: -2em;
+                }
+
+                &.order--0 {
+                    left: 2em;
+                }
+            }
+        }
+    }
+}

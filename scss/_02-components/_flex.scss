@@ -8,6 +8,12 @@
     }
 }
 
+.md--flex {
+    @include media($screen-md) {
+        display: flex;
+    }
+}
+
 .flex--wrap {
     flex-wrap: wrap;
 }
@@ -35,6 +41,7 @@
 .align--items-end {
     align-items: flex-end;
 }
+
 .align--items-center {
     align-items: center;
 }
@@ -51,11 +58,14 @@
     max-width: $max-wrap;
     box-sizing: content-box;
 }
+.winery-wrap{
+    max-width: 1080px;
+    box-sizing: content-box;
+}
 
 .margin--center {
     margin: 0 auto;
 }
-
 
 .content-box {
     box-sizing: content-box;
@@ -89,4 +99,12 @@
     @include media($screen-sm) {
         display: none !important;
     }
+}
+
+.order--0 {
+    order: 0;
+}
+
+.order--1 {
+    order: 1;
 }
