@@ -53,12 +53,15 @@
 // 
 // Grid
 //
-
-.max-wrap {
-    max-width: $max-wrap;
-    box-sizing: content-box;
+@include media($screen-lg) {
+    .max-wrap {
+        max-width: $max-wrap;
+        box-sizing: content-box;
+    }
 }
-.winery-wrap{
+
+
+.winery-wrap {
     max-width: 1080px;
     box-sizing: content-box;
 }

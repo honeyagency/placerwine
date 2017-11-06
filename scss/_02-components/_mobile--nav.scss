@@ -1,0 +1,179 @@
+@include media($max-sm) {
+    .main--header {
+        min-height: 120px;
+        background-color: map-get($brown, light);
+        position: relative;
+
+        &:before {
+            content: ' ';
+            display: block;
+            z-index: 1000;
+            background-color: map-get($brown, light);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            right: 0;
+            height: 120px;
+        }
+
+        .menu--trigger {
+            float: right;
+            width: 16px;
+            height: 16px;
+            position: relative;
+            z-index: 99999;
+            display: block;
+            -webkit-tap-highlight-color: transparent !important;
+
+            span {
+                height: 1px;
+                width: 100%;
+                border-bottom: 1px solid;
+                top: 50%;
+                position: relative;
+                transform: translateY(-50%);
+                display: block;
+                opacity: 1;
+                transition: opacity 0.3s $base-cubic;
+            }
+
+            &:after, &:before {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                content: ' ';
+                transform-origin: center;
+                transform: translateY(0) rotate(0);
+                transition: transform 0.3s $base-cubic;
+            }
+
+            &:before {
+                border-top: 1px solid;
+                top: 0;
+            }
+
+            &:after {
+                border-bottom: 1px solid;
+                bottom: 0;
+            }
+        }
+
+        // Below is navigation after it's displayed
+        .main-nav {
+            text-align: left !important;
+            position: absolute;
+            width: 100%;
+            height: 0;
+            transition: height 0.3s $base-cubic, top 0.3s $base-cubic;
+            left: 0;
+            right: 0;
+            top: -2.5em;
+            background-color: map-get($brown, light);
+            z-index: 999;
+
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                    display: block;
+
+                    &.nav-item {
+                        margin-bottom: 0.5em;
+                        transform: translateY(-1.5em);
+                        transition: transform 0.3s $base-cubic;
+                    }
+
+                    .trigger--children {
+                        cursor: pointer;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 30px;
+                        text-align: center;
+                        height: 30px;
+                        line-height: 1.2;
+                        transition: transform 0.2s $base-cubic;
+                    }
+
+                    &.children--visible {
+                        .trigger--children {
+                            transition: transform 0.2s $base-cubic;
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+            }
+
+            .top-level,
+            .trigger--children {
+                font-size: 1.3em;
+            }
+
+            .top-level {
+                font-weight: 400 !important;
+            }
+
+            .trigger--children {
+                font-weight: 100 !important;
+            }
+
+            .nav-drop {
+                display: none;
+
+                .nav-drop-item {
+                    .nav-link {
+                        font-weight: 400 !important;
+                        margin-left: 5px;
+                        display: block;
+                        padding: 0.2em 0;
+                    }
+                }
+            }
+        }
+    }
+
+    body {
+        &.navopen {
+            .menu--trigger {
+                background-color: transparent;
+
+                &:after, &:before {
+                    transition: transform 0.3s $base-cubic;
+                }
+
+                &:before {
+                    transform: translateY(7.5px) rotate(45deg);
+                }
+
+                &:after {
+                    transform: rotate(45deg);
+                    transform: translateY(-7.5px) rotate(-45deg);
+                }
+
+                span {
+                    transition: opacity 0.15s $base-cubic;
+                    opacity: 0;
+                }
+            }
+
+            .main-nav {
+                top: 7.5em;
+                height: 100vh;
+                transition: height 0.3s $base-cubic, top 0.3s $base-cubic;
+
+                ul {
+                    .nav-item {
+                        transform: translateY(0);
+                        transition: transform 0.3s $base-cubic;
+                    }
+                }
+            }
+        }
+    }
+}

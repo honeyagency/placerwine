@@ -1,6 +1,7 @@
-<header class="header main--header max-wrap margin--center flex flex--wrap align--items-baseline">
+<header class="header main--header max-wrap margin--center dsk--flex flex--wrap align--items-baseline spacing--gutter-mob">
 	<a class="hdr-logo-link" href="/" title="{{site.name}} Logo" rel="home"><i class="icon-logo-tab" data-grunticon-embed></i></a>
+	<label class="menu--trigger hidden--dsk"><span></span></label>
 	{% include 'components/navigation.twig' %}
-	<div class="grid--third">{% include 'components/blocks/block--header-social.twig' %}</div>
+	<div class="grid--sm-third hidden--mob">{% include 'components/blocks/block--header-social.twig' %}</div>
 	{% include 'components/blocks/block--search-modal.twig' %}
 </header>
