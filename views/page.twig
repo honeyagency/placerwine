@@ -1,11 +1,12 @@
 {% extends "base.twig" %}
-
 {% block content %}
-	{% include 'components/blocks/block--breadcrumbs.twig' %}
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-		<section class="section--page-header spacing--vert-2">
-			<h1 class="article-h1 text--center">{{post.title}}</h1>
-		</section>
-			{{post.content}}
-	</article>
+<section class="section--single-header spacing--gutter margin--center max-wrap"><img src="{{post.thumbnail|resize(1320,650)}}" width="100%"></section>
+{% include 'components/blocks/block--breadcrumbs.twig' %}
+<article class="post-type-{{post.post_type}} flex flex--wrap justify--between align--items-start spacing--dsk-vert-4 winery-wrap margin--center" id="post-{{post.ID}}">
+<section class="seciton--winery-content order--1 grid--one grid--sm-three-fifths">
+	<h1 class="article-h1 text--center">{{post.title}}</h1>
+	<div class="font--large">{{post.content}}</div>
+</section>
+</article>
+
 {% endblock %}

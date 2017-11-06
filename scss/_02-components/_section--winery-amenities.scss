@@ -1,7 +1,26 @@
 .section--winery-amenities {
     .block--amenities {
-        flex-basis: calc(100% - 50px);
-        padding-left: 2em;
-        box-sizing: border-box;
+        @include media($screen-sm) {
+            flex-basis: calc(100% - 50px);
+            padding-left: 2em;
+            box-sizing: border-box;
+        }
+
+
+        @include media($max-sm) {
+            .divider {
+                display: none;
+            }
+
+            .inline-block {
+                display: block;
+            }
+        }
+    }
+
+    @include media($max-sm) {
+        .icon-corkscrew {
+            display: none;
+        }
     }
 }

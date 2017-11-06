@@ -4,3 +4,8 @@
         height: auto;
     }
 }
+  @include media($max-sm) {
+      .press--img, .award--img {
+            display: none;
+        }
+    }

@@ -3,7 +3,11 @@
 }
 
 .font--large {
-    font-size: 1.25em;
+    font-size: 1.1em;
+    @include media($screen-sm){
+        font-size: 1.25em;
+    }
+    
 }
 
 .font--sans {

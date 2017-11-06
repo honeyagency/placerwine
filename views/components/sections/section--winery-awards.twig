@@ -1,11 +1,11 @@
-<section class="section--winery-awards grid--one flex flex--wrap justify--between align--items-start border--1 spacing--vert-2">
-	<h2 class="grid--one grid--two-fifths font--standard color--brown-dark">Awards</h2>
-	<div class="border--grid grid--one grid--three-fifths flex flex--wrap justify--between">
+<section class="section--winery-awards grid--one flex flex--wrap justify--between align--items-start border--1 spacing--vert-1 spacing--dsk-vert-2">
+	<h2 class="grid--one grid--sm-fourth font--standard color--brown-dark">Awards</h2>
+	<div class="border--grid grid--one grid--sm-three-fourths flex flex--wrap justify--between">
 		<div class="block--award font--medium">
 			{% for award in winery.deets.awards %}
 				<div class="margin--bot-1">
 				{% if award.image %}<div class="award--img"><img align="" width="60" src="{{award.image|resize(120)}}"></div>{% endif %}
-				<strong class="font--large">{{award.publication}}</strong>
+				<strong class="font--medium">{{award.publication}}</strong>
 				<p>{{award.title}}{% if award.link.url%} <a href="{{award.link.url}}" target="{{award.link.target}}">{{award.link.title}}</a>{% endif%}</p>
 			</div>
 			{% endfor %}
