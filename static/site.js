@@ -36,5 +36,9 @@ jQuery(document).ready(function($) {
     $('.menu--trigger').on('click touchstart', function(event) {
         event.preventDefault();
         $('body').toggleClass('navopen');
+        $('.children--visible').removeClass('children--visible');
+        $openNav = $('.nav-drop.open');
+        $openNav.removeClass('open').slideUp();
+
     });
 });

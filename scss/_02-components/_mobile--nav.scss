@@ -19,8 +19,9 @@
 
         .menu--trigger {
             float: right;
-            width: 16px;
-            height: 16px;
+            width: 24px;
+            height: 24px;
+            margin-top: -0.6em;
             position: relative;
             z-index: 99999;
             display: block;
@@ -29,7 +30,7 @@
             span {
                 height: 1px;
                 width: 100%;
-                border-bottom: 1px solid;
+                border-bottom: 2px solid;
                 top: 50%;
                 position: relative;
                 transform: translateY(-50%);
@@ -50,12 +51,12 @@
             }
 
             &:before {
-                border-top: 1px solid;
+                border-top: 2px solid;
                 top: 0;
             }
 
             &:after {
-                border-bottom: 1px solid;
+                border-bottom: 2px solid;
                 bottom: 0;
             }
         }
@@ -84,27 +85,84 @@
                     display: block;
 
                     &.nav-item {
-                        margin-bottom: 0.5em;
+                        margin: 0;
+                        padding: 0.3em 0;
                         transform: translateY(-1.5em);
                         transition: transform 0.3s $base-cubic;
+
+                        &:nth-of-type(1) {
+                            transition-delay: .125s;
+                        }
+
+                        &:nth-of-type(2) {
+                            transition-delay: .1s;
+                        }
+
+                        &:nth-of-type(3) {
+                            transition-delay: .075s;
+                        }
+
+                        &:nth-of-type(1) {
+                            z-index: 999;
+                            .top-level {
+                                z-index: 999;
+                            }
+                        }
+
+                        &:nth-of-type(2) {
+                            z-index: 998;
+                            .top-level {
+                                z-index: 998;
+                            }
+                        }
+
+                        &:nth-of-type(3) {
+                            z-index: 997;
+                            .top-level {
+                                z-index: 997;
+                            }
+                        }
+
+                        &:nth-of-type(3) {
+                            z-index: 996;
+                            .top-level {
+                                z-index: 996;
+                            }
+                        }
                     }
 
                     .trigger--children {
+                        text-align: right;
                         cursor: pointer;
                         position: absolute;
                         right: 0;
                         top: 0;
-                        width: 30px;
-                        text-align: center;
+                        width: 42%;
                         height: 30px;
                         line-height: 1.2;
-                        transition: transform 0.2s $base-cubic;
+                        font-size: 1.6em;
+                        color: map-get($brown, dark);
+
+                        span {
+                            position: relative;
+                            transition: transform 0.2s $base-cubic, background 0.2s $base-cubic;
+                            width: 30px;
+                            height: 30px;
+                            display: inline-block;
+                            text-align: center;
+                            background: transparent;
+                            line-height: 0.9;
+                            border-radius: 100%;
+                        }
                     }
 
                     &.children--visible {
                         .trigger--children {
-                            transition: transform 0.2s $base-cubic;
-                            transform: rotate(-45deg);
+                            span {
+                                background: transparentize(white, 0.2);
+                                transition: transform 0.2s $base-cubic, background 0.2s $base-cubic;
+                                transform: rotate(-45deg);
+                            }
                         }
                     }
                 }
@@ -116,6 +174,8 @@
             }
 
             .top-level {
+                background-color: map-get($brown, light);
+                position: relative;
                 font-weight: 400 !important;
             }
 
@@ -124,7 +184,11 @@
             }
 
             .nav-drop {
+                margin-top: 4px !important;
                 display: none;
+                position: relative;
+                top: -2em;
+                transition: top 0.3s $base-cubic;
 
                 .nav-drop-item {
                     .nav-link {
@@ -133,13 +197,36 @@
                         display: block;
                         padding: 0.2em 0;
                     }
+
+                    // transform: translateY(-1.5em);
+
+                    // transition-property: transform;
+                    // transition-timing-function: $base-cubic;
+                    transition: opacity 0.3s $base-cubic;
+                    opacity: 0;
+                }
+
+                &.open {
+                    top: 0;
+                    transition: top 0.3s $base-cubic;
+
+                    .nav-drop-item {
+                        opacity: 1;
+                        transition: opacity 0.3s $base-cubic;
+                    }
                 }
             }
         }
     }
 
     body {
-        &.navopen {
+        
+
+        &.navopen {position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
             .menu--trigger {
                 background-color: transparent;
 
@@ -148,12 +235,12 @@
                 }
 
                 &:before {
-                    transform: translateY(7.5px) rotate(45deg);
+                    transform: translateY(11px) rotate(45deg);
                 }
 
                 &:after {
                     transform: rotate(45deg);
-                    transform: translateY(-7.5px) rotate(-45deg);
+                    transform: translateY(-11px) rotate(-45deg);
                 }
 
                 span {

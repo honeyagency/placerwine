@@ -1,11 +1,11 @@
 <nav role="navigation" class="text--center main-nav grid--sm-half align--items-end spacing--vert-1 spacing--gutter-mob">
-	<ul class="dsk--flex flex--wrap justify--center mar--no align--items-center">
+	<ul class="nav-list dsk--flex flex--wrap justify--center mar--no align--items-center">
 		{% for item in menu.get_items %}
 			<li class="nav-item {{item.classes | join(' ')}} ">
 				<a class="top-level nav-link color--blue font--bold font--large" href="{{item.get_link}}">{{item.title}}</a>
 
 				{% if item.get_children %}
-					<label class="hidden--dsk trigger--children">+</label>
+					<label class="hidden--dsk trigger--children"><span>+</span></label>
 					<ul class="nav nav-drop mar--no">
 						{% for child in item.get_children %}
 							<li class="nav-drop-item bg--brown-light">
