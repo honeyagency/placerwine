@@ -1,6 +1,6 @@
 {% extends "base.twig" %}
 {% block content %}
-	{% include 'components/blocks/block--breadcrumbs.twig' %}
+	<div class="max-wrap margin--center spacing--gutter margin--horiz-1">{% include 'components/blocks/block--breadcrumbs.twig' %}</div>
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 		<section class="section--page-header spacing--vert-2">
 			<h1 class="article-h1 text--center">{{post.title}}</h1>

@@ -1,11 +1,7 @@
-<div class="max-wrap margin--center spacing--gutter">
-	<div class="block--breadcrumbs">
-
-		{% if post.post_parent != 0 %}
-			<a href="{{ post.parent.link }}" class="color--black font--bold">{{ post.parent.title }} <span class="font--standard">> </span></a><span class="color--black">{{post.title}}</span>
-		{% elseif post.post_type != 'page' %}
-
-			<a href="{{site.url}}/{{post.type.rewrite.slug}}" class="color--black font--bold">{{post.type.labels.name}} <span class="font--standard">> </span></a><span class="color--black">{{post.title}}</span>
-		{% endif %}
-	</div>
+<div class="block--breadcrumbs">
+	{% if post.post_parent != 0 %}
+		<a href="{{ post.parent.link }}" class="color--brown-dark font--bold">{{ post.parent.title }} <i class="icon-angle-right" data-grunticon-embed></i></a><span class="color--black">{{post.title}}</span>
+	{% elseif post.post_type != 'page' %}
+		<a href="{{site.url}}/{{post.type.rewrite.slug}}" class="color--brown-dark font--bold">{{post.type.labels.name}} <i class="icon-angle-right" data-grunticon-embed></i></a><span class="color--black">{{post.title}}</span>
+	{% endif %}
 </div>

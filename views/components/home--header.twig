@@ -1,10 +1,7 @@
-<header class="header home--header spacing--vert-1 max-wrap margin--center">
+<header class="header home--header spacing--vert-1 max-wrap margin--center hidden--mob">
 	<div class="hidden--mob">{% include 'components/blocks/block--header-social.twig' %}</div>
 	{% include 'components/blocks/block--search-modal.twig' %}
 	<a class="hdr-logo-link margin--center table" href="/" title="{{site.name}} Logo" rel="home"><i class="icon-logo" data-grunticon-embed></i></a>
 	<div class="color--brown text--uppercase text--center color--brown-dark spacing--vert-2 letter--1 font--bold">{{home.location}}</div>
 	{% include 'components/navigation--home.twig' %}
-	<div class="hidden--dsk">
-		{% include 'components/blocks/block--header-social.twig' %}
-	</div>
 </header>

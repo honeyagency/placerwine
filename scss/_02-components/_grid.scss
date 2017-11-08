@@ -6,7 +6,9 @@ $gutter: $grid;
     flex-basis: 100%;
     width: 100%;
 }
-
+.grid--gutter {
+     flex-basis: calc(100% - (.7em * #{$gutter}) * 2 );
+}
 .grid--four-fifths {
     flex-basis: calc(100% / 1.25 - (.2em * #{$gutter}));
     width: calc(100% / 1.25 - (.2em * #{$gutter}));

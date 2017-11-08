@@ -8,7 +8,7 @@
 					<label class="hidden--dsk trigger--children"><span>+</span></label>
 					<ul class="nav nav-drop mar--no">
 						{% for child in item.get_children %}
-							<li class="nav-drop-item bg--brown-light">
+							<li class="nav-drop-item">
 								<a class="nav-link color--black font--bold font--large" href="{{child.get_link}}">{{child.title}}</a>
 							</li>
 						{% endfor %}
@@ -20,4 +20,5 @@
 			{% if loop.last %}{% else %}<span class="hidden--mob">|</span>{% endif %}
 		{% endfor %}
 	</ul>
+	<div class="hidden--dsk">{{options.search.form}}</div>
 </nav>

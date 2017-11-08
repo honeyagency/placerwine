@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 {% block content %}
 <section class="section--single-header spacing--gutter margin--center max-wrap"><img src="{{post.thumbnail}}" width="100%"></section>
-{% include 'components/blocks/block--breadcrumbs.twig' %}
+<div class="max-wrap margin--center spacing--gutter margin--horiz-1">{% include 'components/blocks/block--breadcrumbs.twig' %}</div>
 <article class="flex flex--wrap justify--between align--items-start spacing--dsk-vert-4 winery-wrap margin--center spacing--gutter">
 	{% include 'components/sections/section--winery-aside.twig' %}
 	{% include 'components/sections/section--winery-content.twig' %}

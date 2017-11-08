@@ -67,10 +67,12 @@
             position: absolute;
             width: 100%;
             height: 0;
-            transition: height 0.3s $base-cubic, top 0.3s $base-cubic;
+            -webkit-transform: translate3d(0, 0, 0);
+            opacity: 0;
+            transition: height 0.3s $base-cubic, top 0.3s $base-cubic, opacity .3s $base-cubic;
             left: 0;
             right: 0;
-            top: -2.5em;
+            top: -7.5em;
             background-color: map-get($brown, light);
             z-index: 999;
 
@@ -85,6 +87,7 @@
                     display: block;
 
                     &.nav-item {
+                        min-height: 35px;
                         margin: 0;
                         padding: 0.3em 0;
                         transform: translateY(-1.5em);
@@ -104,6 +107,7 @@
 
                         &:nth-of-type(1) {
                             z-index: 999;
+
                             .top-level {
                                 z-index: 999;
                             }
@@ -111,6 +115,7 @@
 
                         &:nth-of-type(2) {
                             z-index: 998;
+
                             .top-level {
                                 z-index: 998;
                             }
@@ -118,6 +123,7 @@
 
                         &:nth-of-type(3) {
                             z-index: 997;
+
                             .top-level {
                                 z-index: 997;
                             }
@@ -125,6 +131,7 @@
 
                         &:nth-of-type(3) {
                             z-index: 996;
+
                             .top-level {
                                 z-index: 996;
                             }
@@ -140,6 +147,7 @@
                         width: 42%;
                         height: 30px;
                         line-height: 1.2;
+                        z-index: 9998;
                         font-size: 1.6em;
                         color: map-get($brown, dark);
 
@@ -174,6 +182,7 @@
             }
 
             .top-level {
+                display: block;
                 background-color: map-get($brown, light);
                 position: relative;
                 font-weight: 400 !important;
@@ -185,12 +194,13 @@
 
             .nav-drop {
                 margin-top: 4px !important;
-                display: none;
                 position: relative;
-                top: -2em;
-                transition: top 0.3s $base-cubic;
 
                 .nav-drop-item {
+                    z-index: 10;
+                    opacity: 0;
+                    position: relative;
+
                     .nav-link {
                         font-weight: 400 !important;
                         margin-left: 5px;
@@ -198,35 +208,82 @@
                         padding: 0.2em 0;
                     }
 
-                    // transform: translateY(-1.5em);
+                    -webkit-transform: translate3d(0, 0, 0);
+                    margin-top: -35px;
 
-                    // transition-property: transform;
-                    // transition-timing-function: $base-cubic;
-                    transition: opacity 0.3s $base-cubic;
-                    opacity: 0;
+                    &:nth-of-type(1) {
+                        transition: opacity 0.25s $base-cubic, margin 0.25s $base-cubic;
+                    }
+
+                    &:nth-of-type(2) {
+                        transition: opacity 0.3s $base-cubic, margin 0.3s $base-cubic;
+                    }
+
+                    &:nth-of-type(3) {
+                        transition: opacity 0.35s $base-cubic, margin 0.35s $base-cubic;
+                    }
+
+                    &:nth-of-type(4) {
+                        transition: opacity 0.4s $base-cubic, margin 0.4s $base-cubic;
+                    }
+
+                    &:nth-of-type(5) {
+                        transition: opacity 0.45s $base-cubic, margin 0.45s $base-cubic;
+                    }
+
+                    &:nth-of-type(6) {
+                        transition: opacity 0.5s $base-cubic, margin 0.5s $base-cubic;
+                    }
+
+                    &:nth-of-type(7) {
+                        transition: opacity 0.55s $base-cubic, margin 0.55s $base-cubic;
+                    }
                 }
 
                 &.open {
-                    top: 0;
-                    transition: top 0.3s $base-cubic;
-
                     .nav-drop-item {
                         opacity: 1;
-                        transition: opacity 0.3s $base-cubic;
+                        transition: opacity 0.3s $base-cubic, margin-top 0.3s $base-cubic;
+                        margin-top: 0;
+
+                        &:nth-of-type(1) {
+                            transition: opacity 0.25s $base-cubic, margin 0.25s $base-cubic;
+                        }
+
+                        &:nth-of-type(2) {
+                            transition: opacity 0.3s $base-cubic, margin 0.3s $base-cubic;
+                        }
+
+                        &:nth-of-type(3) {
+                            transition: opacity 0.35s $base-cubic, margin 0.35s $base-cubic;
+                        }
+
+                        &:nth-of-type(4) {
+                            transition: opacity 0.4s $base-cubic, margin 0.4s $base-cubic;
+                        }
+
+                        &:nth-of-type(5) {
+                            transition: opacity 0.45s $base-cubic, margin 0.45s $base-cubic;
+                        }
                     }
                 }
             }
         }
+
+        .search-field {
+            width: 100%;
+            margin-top: 1em;
+        }
     }
 
     body {
-        
+        &.navopen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
 
-        &.navopen {position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
             .menu--trigger {
                 background-color: transparent;
 
@@ -252,7 +309,8 @@
             .main-nav {
                 top: 7.5em;
                 height: 100vh;
-                transition: height 0.3s $base-cubic, top 0.3s $base-cubic;
+                opacity: 1;
+                transition: height 0.3s $base-cubic, top 0.3s $base-cubic, opacity .3s $base-cubic;
 
                 ul {
                     .nav-item {

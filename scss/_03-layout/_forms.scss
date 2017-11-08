@@ -36,7 +36,7 @@ textarea,
     font-family: $base-sans-font;
     color: $formtextcolor;
     appearance: none;
-
+    -webkit-appearance: none;
     border: 1px solid $formbordercolor;
     border-radius: 0 !important;
     box-shadow: none;
@@ -113,6 +113,17 @@ select {
     height: 1px;
     width: 1px;
     overflow: hidden;
+}
+
+.screen-reader-text-mob {
+    @include media($max-sm) {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
 }
 
 .wpcf7-form-control-wrap {
