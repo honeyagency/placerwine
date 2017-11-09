@@ -11,4 +11,13 @@
 
         position: relative;
     }
+
+    @include media($screen-xs) {}
+
+    @include media($max-sm) {
+        justify-content: center;
+    }
+
+
+    @include media($screen-md) {}
 }

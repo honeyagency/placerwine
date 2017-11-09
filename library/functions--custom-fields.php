@@ -31,10 +31,14 @@ function prepareSiteOptions()
         'linktext' => get_field('field_59e8e4bfcfd7a', 'options'),
         'links'    => $links,
     );
+    $footer = array(
+        'email' => get_field('field_5a03a31071dcc', 'options'),
+    );
     $options = array(
         'social'  => $social,
         'default' => $defaults,
         'search'  => $search,
+        'footer'  => $footer,
     );
     return $options;
 }

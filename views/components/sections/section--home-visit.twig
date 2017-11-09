@@ -2,6 +2,6 @@
 	{% if home.visit.image %}<img data-original="{{home.visit.image|resize(1320, 675)}}" alt="{{home.visit.image.post_title}}" class="grid--one" data-original-set="{{home.visit.image|resize(640, 327)}} 640w,{{home.visit.image|resize(750, 383)}} 750w,{{home.visit.image|resize(1536, 785)}} 768w,{{home.visit.image|resize(1668, 852)}} 834w,{{home.visit.image|resize(1024, 524)}} 1024w,{{home.visit.image|resize(2640, 1350)}} 1320w">{% endif %}
 	<div class="block--home-visit-text bg--brown-light grid--gutter grid--sm-half grid--md-fourth spacing--horiz-1 spacing--vert-1 spacing--dsk-horiz-2 spacing--dsk-vert-2">
 	{% if home.visit.title %}<h2>{{home.visit.title}}</h2>{% endif %}
-	{% if home.visit.link %}<a class="font--large font--bold" href="{{home.visit.link.url}}" title="{{home.visit.link.title}}" target="{{home.visit.link.target}}">{{home.visit.link.title}}</a>{% endif %}
+	{% if home.visit.link %}<a class="font--large font--bold icon-underline" href="{{home.visit.link.url}}" title="{{home.visit.link.title}}" target="{{home.visit.link.target}}">{{home.visit.link.title}}</a>{% endif %}
 	</div>
 </section>

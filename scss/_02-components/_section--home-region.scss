@@ -7,7 +7,44 @@
     }
 
     .block--home-region-text {
-        margin-top: -4em;
+        @include media($screen-xs) {}
+
+        @include media($screen-sm) {
+            margin-top: -2em;
+        }
+
+
+        @include media($screen-md) {
+            margin-top: -3em;
+        }
+
+
+        @include media($screen-lg) {
+            margin-top: -4em;
+        }
+
+
         position: relative;
+
+        @include media($max-sm) {
+            margin: 0;
+            width: 70%;
+            top: -15em;
+            left: calc(100vw - 75%);
+        }
+    }
+
+    @include media($max-sm) {
+        .block--center-images {
+            margin-bottom: .8em;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .icon-wine-glass {
+            bottom: -5.5em;
+        }
     }
 }

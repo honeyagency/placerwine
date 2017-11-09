@@ -1,7 +1,7 @@
-<section class="section--home-events flex flex--wrap justify--between spacing--gutter">
+<section class="section--home-events flex flex--wrap justify--between spacing--gutter spacing--dsk-vert-5">
 	<div class="grid--one flex flex--wrap justify--between spacing--vert-2 align--items-baseline">
 		{% if home.events.title %}<h2>{{home.events.title}}</h2>{% endif %}
-		{% if home.events.link %}<a class="font--large font--bold" href="{{home.events.link.url}}" title="{{home.events.link.title}}" target="{{home.events.link.target}}"><h4>{{home.events.link.title}}</h4></a>{% endif %}
+		{% if home.events.link %}<a class="font--large font--bold icon-underline" href="{{home.events.link.url}}" title="{{home.events.link.title}}" target="{{home.events.link.target}}">{{home.events.link.title}}</a>{% endif %}
 	</div>
 	{% for event in home.events.posts %}
 		<div class="block--home-event grid--one grid--sm-third">
