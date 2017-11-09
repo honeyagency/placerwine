@@ -1,9 +1,27 @@
-<article class="tease tease-{{post.post_type}}" id="tease-{{post.ID}}">
+<article class="tease tease-{{post.post_type}} grid--one flex flex--wrap justify--between align--items-start border--1 spacing--vert-2" id="tease-{{post.ID}}">
 	{% block content %}
-		<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
-		<p>{{post.get_preview}}</p>
-		{% if post.get_thumbnail %}
-			<img src="{{post.thumbnail.src}}" />
-		{% endif %}
+		<div class="grid--one grid--sm-fourth">
+			<span class="text--uppercase font--tiny letter--1">{{post.post_type}}</span>
+			<h2 class=" font--standard color--brown-dark"><a href="{{post.link}}"  class="color--brown-dark">{{post.title}}</a></h2>
+		</div>
+		<div class="winery--details grid--one grid--sm-three-fourths font--medium">
+			{% if post.post_type == 'winery' %}
+				{% if post.get_thumbnail %}
+					<img width="400" align="right" src="{{post.thumbnail.src|resize(800,400)}}" />
+				{% endif %}
+				{{post.short_description}}
+			{% elseif post.post_type == 'event' %}
+				{% if post.get_thumbnail %}
+					<img width="400" align="right" src="{{post.thumbnail.src|resize(800,400)}}" />
+				{% endif %}
+				{{post.event_description}}
+			{% else %}
+				{% if post.get_thumbnail %}
+					<img width="400" align="right" src="{{post.thumbnail.src|resize(800,400)}}" />
+				{% endif %}
+				{{post.get_preview}}
+			{% endif %}
+
+		</div>
 	{% endblock %}
 </article>

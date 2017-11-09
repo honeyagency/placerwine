@@ -23,7 +23,6 @@
             "label": "Facebook URL",
             "name": "facebook",
             "type": "link",
-            "value": null,
             "instructions": "Full profile URL",
             "required": 0,
             "conditional_logic": 0,
@@ -39,7 +38,21 @@
             "label": "Twitter URL",
             "name": "twitter_username",
             "type": "link",
-            "value": null,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_5a049895378c0",
+            "label": "Instagram URL",
+            "name": "instagram_url",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -71,7 +84,6 @@
             "label": "Default Site Image",
             "name": "default_site_image",
             "type": "image",
-            "value": null,
             "instructions": "This is the image that's displayed for social media, link sharing, etc when the shared page has no image, it should be large.",
             "required": 0,
             "conditional_logic": 0,
@@ -96,7 +108,6 @@
             "label": "Map Center",
             "name": "map_center",
             "type": "google_map",
-            "value": null,
             "instructions": "This is the default center of any map on the website.",
             "required": 0,
             "conditional_logic": 0,
@@ -115,7 +126,6 @@
             "label": "404 Text",
             "name": "404_text",
             "type": "wysiwyg",
-            "value": null,
             "instructions": "Copy displayed on the 404 page",
             "required": 0,
             "conditional_logic": 0,
@@ -151,7 +161,6 @@
             "label": "Search Modal Title",
             "name": "search_modal_title",
             "type": "text",
-            "value": null,
             "instructions": "This is the title in the search pop-up",
             "required": 0,
             "conditional_logic": 0,
@@ -171,7 +180,6 @@
             "label": "Search modal text",
             "name": "search_modal_text",
             "type": "text",
-            "value": null,
             "instructions": "This is the explanation text in the search pop-up",
             "required": 0,
             "conditional_logic": 0,
@@ -191,7 +199,6 @@
             "label": "Search Form Placeholder",
             "name": "search_form_placeholder",
             "type": "text",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -211,7 +218,6 @@
             "label": "Search Form Button",
             "name": "search_form_button",
             "type": "text",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -231,7 +237,6 @@
             "label": "Search link text",
             "name": "search_link_text",
             "type": "text",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -251,7 +256,6 @@
             "label": "Search Links",
             "name": "search_links",
             "type": "repeater",
-            "value": null,
             "instructions": "Add a few links that might more quickly get people to what they're looking for while searching.",
             "required": 0,
             "conditional_logic": 0,
@@ -271,7 +275,6 @@
                     "label": "Link",
                     "name": "link",
                     "type": "link",
-                    "value": null,
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -290,7 +293,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options"
+                "value": "acf-options-site-settings"
             }
         ]
     ],
@@ -302,5 +305,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1509834284
+    "modified": 1510250668
 }

@@ -1,0 +1,30 @@
+.section--footer-links {
+    padding-top: 1em * $grid;
+    padding-bottom: 1em * $grid;
+
+    @include media($screen-lg) {
+        padding-top: 3em * $grid;
+        padding-bottom: 3em * $grid;
+    }
+
+
+    @include media($max-lg) {
+        .block--footer-social {
+            padding-top: 1em * $grid;
+            padding-bottom: 1em * $grid;
+        }
+    }
+
+
+    @include media($max-sm) {
+        .block--footer-social {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+
+    nav {
+        font-size: 1.2em;
+    }
+}

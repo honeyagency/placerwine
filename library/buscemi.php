@@ -88,10 +88,22 @@ function cc_mime_types($mimes)
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
+
+
+
+// Exclude images from search results
+add_action( 'init', 'exclude_images_from_search_results' );
+function exclude_images_from_search_results() {
+    global $wp_post_types;
+ 
+    $wp_post_types['attachment']->exclude_from_search = true;
+}
+
 // Setting up ACF options page
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page();
-    acf_add_options_page('Footer');
+    acf_add_options_sub_page('Site Settings');
+    acf_add_options_sub_page('Footer');
 }
 
 require_once 'functions--custom-fields.php';

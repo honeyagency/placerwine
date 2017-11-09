@@ -10,9 +10,10 @@
     
 }
 .home{
+    main{
     .font--large{
         font-size: 1.5em;
-    }
+    }}
 }
 .font--sans {
     font-family: $base-sans-font;

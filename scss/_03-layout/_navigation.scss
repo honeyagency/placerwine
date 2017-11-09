@@ -107,12 +107,14 @@ nav {
         }
 
         .nav-drop {
+
             left: 50%;
             transform: translateX(-50%);
             width: 150%;
             max-width: none !important;
 
             li {
+                background-color: map-get($brown, light);
                 width: 100%;
             }
         }

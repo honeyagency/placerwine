@@ -1,26 +1,32 @@
-<section class="section--footer-links max-wrap margin--center spacing--gutter">
-	<span>
-	<i class="icon-i80" data-grunticon-embed></i>
-	{% if options.social.facebook %}<a href="{{options.social.facebook.url}}" target="{{options.social.facebook.target}}" title="{{options.social.facebook.title}}"><i class="icon-social--facebook footer-social" data-grunticon-embed></i></a>{% endif %}
-		{% if options.social.twitter %}<a href="{{options.social.twitter.url}}" target="{{options.social.twitter.target}}" title="{{options.social.twitter.title}}"><i class="icon-social--twitter footer-social" data-grunticon-embed></i></a>{% endif %}
-		</span>
-	<nav role="navigation">
-		<ul class="flex flex--wrap justify--center">
-			{% for item in footermenu.get_items %}
-				<li class="nav-item {{item.classes | join(' ')}}">
-					<a class="nav-link color--blue font--large font--bold" href="{{item.get_link}}">{{item.title}}</a>
-					{% if item.get_children %}
-						<ul class="nav nav-drop">
-							{% for child in item.get_children %}
-								<li class="nav-drop-item inline--block">
-									<a class="nav-link color--red font--large font--bold" href="{{child.get_link}}">{{child.title}}</a>
-									{% if not loop.last %}|{% endif %}
-								</li>
-							{% endfor %}
-						</ul>
-					{% endif %}
+<section class="section--footer-links max-wrap margin--center spacing--gutter dsk--flex flex--wrap justify--between">
+	<nav role="navigation" class="grid--one grid--sm-half grid--lg-third order--1">
+		<strong class="">{{options.footer.area_1_title}}</strong>
+		<ul>
+			{% for item in options.footer.area_1_pages %}
+				<li class="nav-item inline-block">
+					<a class="nav-link color--red  font--bold" href="{{item.guid}}">{{item.post_title}}</a>{% if loop.last %}{% else %}<strong class="color--red  spacing--horiz-half">|</strong>{% endif %}
 				</li>
 			{% endfor %}
 		</ul>
 	</nav>
+	<nav role="navigation" class="grid--one grid--sm-half grid--lg-third order--1">
+		<strong class="">{{options.footer.area_2_title}}</strong>
+		<ul>
+			{% for item in options.footer.area_2_pages %}
+				<li class="nav-item inline-block">
+					<a class="nav-link color--red  font--bold" href="{{item.guid}}">{{item.post_title}}</a>{% if loop.last %}{% else %}<strong class="color--red  spacing--horiz-half">|</strong>{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+	<div class="block--footer-social grid--one order--0 grid--one grid--lg-fourth flex flex--wrap justify--start align--items-center">
+		<i class="icon-i80" data-grunticon-embed></i>
+		{% if options.social.facebook %}<a href="{{options.social.facebook.url}}" target="{{options.social.facebook.target}}" title="{{options.social.facebook.title}}"><i class="icon-social--facebook footer-social" data-grunticon-embed></i></a>{% endif %}
+		{% if options.social.twitter %}<a href="{{options.social.twitter.url}}" target="{{options.social.twitter.target}}" title="{{options.social.twitter.title}}"><i class="icon-social--twitter footer-social" data-grunticon-embed></i></a>{% endif %}
+			{% if options.social.instagram %}<a href="{{options.social.instagram.url}}" target="{{options.social.instagram.target}}" title="{{options.social.instagram.title}}"><i class="icon-social--instagram footer-social" data-grunticon-embed></i></a>{% endif %}
+	</div>
+</section>
+
+<section class="spacing--vert-1 text--center font--bold">
+	<a href="{{options.footer.privacy.url}}" class="color--black" target="{{options.footer.privacy.target}}" title="{{options.footer.privacy.title}}">{{options.footer.privacy.title}}</a><span class="spacing--horiz-half">|</span>&copy; Copyright 2010-{{"now"|date("Y")}} Placer County Vintners Association. All Rights Reserved. Website by <a href="https://honeyagency.com" target="_blank" title="Website designed and developed by Honey Agency in Sacramento, CA">Honey Agency.</a>
 </section>

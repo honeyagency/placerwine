@@ -36,7 +36,7 @@
 }
 
 .icon-i80 {
-    width: 75px;
+    width: 50px;
     display: inline-block;
 
     svg {
@@ -45,8 +45,9 @@
 }
 
 .footer-social {
-    height: 40px;
-    width: 40px;
+    margin-left: 1em;
+    height: 30px;
+    width: 30px;
     display: inline-block;
 
     svg {
@@ -77,6 +78,13 @@
 }
 
 .icon-underline {
-    background-position: bottom;
+    cursor: pointer;
+    background-position: 0 130%;
+    transition: background-position 0.2s $base-cubic;
     padding-bottom: .5em;
+
+    &:hover {
+        background-position: 0 95%;
+        transition: background-position 0.2s $base-cubic;
+    }
 }

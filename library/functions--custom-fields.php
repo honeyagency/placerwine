@@ -3,8 +3,9 @@
 function prepareSiteOptions()
 {
     $social = array(
-        'facebook' => get_field('field_59e8db03b3414', 'options'),
-        'twitter'  => get_field('field_59e8db13b3415', 'options'),
+        'facebook'  => get_field('field_59e8db03b3414', 'options'),
+        'twitter'   => get_field('field_59e8db13b3415', 'options'),
+        'instagram' => get_field('field_5a049895378c0', 'options'),
     );
     $defaultImageId = get_field('field_59e8db84815ec', 'options');
     if ($defaultImageId != null) {
@@ -32,7 +33,12 @@ function prepareSiteOptions()
         'links'    => $links,
     );
     $footer = array(
-        'email' => get_field('field_5a03a31071dcc', 'options'),
+        'email'        => get_field('field_5a03a31071dcc', 'options'),
+        'area_1_title' => get_field('field_5a049439a795f', 'options'),
+        'area_1_pages' => get_field('field_5a049447a7960', 'options'),
+        'area_2_title' => get_field('field_5a049450a7961', 'options'),
+        'area_2_pages' => get_field('field_5a049471a7962', 'options'),
+        'privacy'      => get_field('field_5a049a134307b', 'options'),
     );
     $options = array(
         'social'  => $social,

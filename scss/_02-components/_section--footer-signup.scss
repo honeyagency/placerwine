@@ -1,25 +1,32 @@
 .section--footer-signup {
     .icon-taste-your-way {
-        @include media($screen-sm) {
+        @include media($screen-md) {
             margin: 0 auto;
         }
 
 
-        @include media($max-sm) {
+        @include media($max-md) {
             margin-bottom: 1em;
         }
     }
 
     form {
         font-weight: 600;
-        font-size: 1.5em;
+        font-size: 1em;
+
+        @include media($screen-sm) {
+            font-size: 1.5em;
+        }
+
 
         .mc-field-group {
-            @include media($screen-xs){}
             width: 70%;
-            @include media($screen-sm){
-            	width: 50%;
+
+            @include media($screen-md) {
+                width: 50%;
             }
+
+
             display: inline-block;
 
             [type="email"] {
@@ -68,5 +75,9 @@
         letter-spacing: 0;
         font-weight: 600;
         color: white;
+
+        @include media($max-sm) {
+            padding: 0;
+        }
     }
 }
