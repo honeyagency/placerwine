@@ -7,20 +7,20 @@
 		<div class="winery--details grid--one grid--sm-three-fourths font--medium">
 			{% if post.post_type == 'winery' %}
 				{% if post.get_thumbnail %}
-					<img width="300" align="right" src="{{post.thumbnail.src|resize(600,600)}}" />
+					<img width="300" align="right" class="hidden--mob" src="{{post.thumbnail.src|resize(600,600)}}" />
 				{% endif %}
 
 				{{post.short_description}}
 				<a href="{{post.permalink}}">Read More</a>
 			{% elseif post.post_type == 'event' %}
 				{% if post.get_thumbnail %}
-					<img width="300" align="right" src="{{post.thumbnail.src|resize(600,600)}}" />
+					<img width="300" align="right" class="hidden--mob" src="{{post.thumbnail.src|resize(600,600)}}" />
 				{% endif %}
 				{{post.event_description}}
 				<a href="{{post.permalink}}">Read More</a>
 			{% else %}
 				{% if post.get_thumbnail %}
-					<img width="300" align="right" src="{{post.thumbnail.src|resize(600,600)}}" />
+					<img width="300" align="right" class="hidden--mob" src="{{post.thumbnail.src|resize(600,600)}}" />
 				{% endif %}
 				{{post.get_preview}}
 			{% endif %}

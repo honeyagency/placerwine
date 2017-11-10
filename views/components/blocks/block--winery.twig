@@ -3,7 +3,7 @@
 	<h2 class="grid--one grid--sm-fourth font--standard color--brown-dark"><a href="{{winery.link}}" class="color--brown-dark">{{winery.title}}</a></h2>
 	<div class="winery--details grid--one grid--sm-three-fourths font--medium">
 		{% if winery.image %}
-			<img width="300" align="right" src="{{winery.image|resize(600,600)}}" />
+			<img width="300" class="hidden--mob" align="right" src="{{winery.image|resize(600,600)}}" />
 		{% endif %}
 		{{winery.winery.content.description}}
 		<a href="{{post.permalink}}">Read More</a>
