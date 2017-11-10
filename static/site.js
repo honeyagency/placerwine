@@ -9,8 +9,14 @@ jQuery(document).ready(function($) {
     function toggleSearch() {
         $body = $('body');
         $search = $('.block--search-modal');
+        if ($body.hasClass('search-is-open')) {
+
+        }else{
+            $('.search-field').focus();
+        }
         $body.toggleClass('search-is-open');
         $search.toggleClass('this-is-open');
+        
     }
     $toggle = $('.toggle-search');
     $toggle.on('click touchstart', function(event) {
@@ -33,8 +39,7 @@ jQuery(document).ready(function($) {
     //         $child.slideDown();
     //     }
     // });
-
-     $('.trigger--children').on('click touchstart', function(event) {
+    $('.trigger--children').on('click touchstart', function(event) {
         event.preventDefault();
         $parent = $(this).parent();
         $child = $parent.find('.nav-drop');
@@ -49,17 +54,15 @@ jQuery(document).ready(function($) {
             $child.addClass('open');
         }
     });
-
     $('.menu--trigger').on('click touchstart', function(event) {
         event.preventDefault();
         $('body').toggleClass('navopen');
         $('.children--visible').removeClass('children--visible');
         $openNav = $('.nav-drop.open');
         $openNav.removeClass('open');
-
     });
-    $('#wineryfilter').submit(function(){
-   $(this).attr('action',$(this).attr('action')+$('#amenity_id').val());
-   $(this).submit();
-});
+    $('#wineryfilter').submit(function() {
+        $(this).attr('action', $(this).attr('action') + $('#amenity_id').val());
+        $(this).submit();
+    });
 });

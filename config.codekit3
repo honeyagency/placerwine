@@ -61,6 +61,14 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/acf-json\/group_5a03a30c30d32.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/acf-json\/group_5a03a30c30d32-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/app\/app.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -553,6 +561,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/scss\/_02-components\/_section--footer-links.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/css\/_section--footer-links.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/scss\/_02-components\/_section--footer-signup.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -653,6 +674,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/scss\/css\/_section--winery-content.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_02-components\/_section--winery-filter.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/css\/_section--winery-filter.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -2066,6 +2100,27 @@
 		"oAP": "\/views\/components\/sections\/section--child-blocks.twig",
 		"oF": 0
 		},
+	"\/views\/components\/sections\/section--event-aside.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/components\/sections\/section--event-aside.twig",
+		"oF": 0
+		},
+	"\/views\/components\/sections\/section--event-content.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/components\/sections\/section--event-content.twig",
+		"oF": 0
+		},
+	"\/views\/components\/sections\/section--event-details.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/components\/sections\/section--event-details.twig",
+		"oF": 0
+		},
 	"\/views\/components\/sections\/section--footer-links.twig": {
 		"cB": 0,
 		"ft": 8192,
@@ -2143,6 +2198,13 @@
 		"oAP": "\/views\/components\/sections\/section--winery-content.twig",
 		"oF": 0
 		},
+	"\/views\/components\/sections\/section--winery-filter.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/components\/sections\/section--winery-filter.twig",
+		"oF": 0
+		},
 	"\/views\/components\/sections\/section--winery-list.twig": {
 		"cB": 0,
 		"ft": 8192,
@@ -2190,6 +2252,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/views\/index.twig",
+		"oF": 0
+		},
+	"\/views\/page-events.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/views\/page-events.twig",
 		"oF": 0
 		},
 	"\/views\/page-explore-our-wineries.twig": {
