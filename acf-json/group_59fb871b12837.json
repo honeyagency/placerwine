@@ -74,7 +74,7 @@
         },
         {
             "key": "field_59fdf75128310",
-            "label": "Awards & Details",
+            "label": "Details & Awards",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -550,5 +550,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1510270435
+    "modified": 1510352986
 }

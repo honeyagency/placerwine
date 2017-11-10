@@ -2,19 +2,32 @@
     font-size: 1.2em;
 }
 
+.font--medium-dsk {
+    @include media($screen-sm) {
+        font-size: 1.2em;
+    }
+}
+
 .font--large {
     font-size: 1.1em;
-    @include media($screen-sm){
+
+    @include media($screen-sm) {
         font-size: 1.25em;
     }
-    
 }
-.home{
-    main{
-    .font--large{
-        font-size: 1.5em;
-    }}
+
+.home {
+    main {
+        .font--large {
+            font-size: 1.2em;
+
+            @include media($screen-sm) {
+                font-size: 1.5em;
+            }
+        }
+    }
 }
+
 .font--sans {
     font-family: $base-sans-font;
 }

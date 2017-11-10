@@ -7,7 +7,7 @@
 		"uuidString": "1423D1DD-4EE5-4B7C-A7C9-0B28865AB389"
 		}
 	],
-"creatorBuild": "26097",
+"creatorBuild": "26142",
 "files": {
 	"\/.gitignore": {
 		"cB": 0,
@@ -557,6 +557,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/scss\/css\/_section--child-blocks.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_02-components\/_section--content.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/css\/_section--content.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

@@ -1,0 +1,5 @@
+.section--content {
+    @include media($max-sm) {
+        padding-bottom: 2em;
+    }
+}

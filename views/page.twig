@@ -1,11 +1,11 @@
 {% extends "base.twig" %}
 {% block content %}
-<section class="section--single-header spacing--gutter margin--center max-wrap "><img class="grid--one" src="{{post.thumbnail|resize(1320,500)}}" width="100%">
-<div class="block--overlap-page-titles bg--brown-light grid--gutter grid--sm-three-fifths grid--md-two-fifths spacing--dsk-vert-2 spacing--dsk-horiz-2"><h1 class="article-h1">{{post.title}}</h1></div>
+<section class="section--single-header spacing--gutter-dsk margin--center max-wrap"><img class="grid--one" src="{{post.thumbnail|resize(1320,500)}}" width="100%">
+<div class="block--overlap-page-titles bg--brown-light grid--gutter grid--sm-three-fifths grid--md-two-fifths spacing--dsk-vert-2 spacing--dsk-horiz-2 spacing--gutter-mob"><h1 class="article-h1">{{post.title}}</h1></div>
 </section>
 
 <article class="post-type-{{post.post_type}} flex flex--wrap justify--between align--items-start spacing--dsk-vert-1 max-wrap margin--center" id="post-{{post.ID}}">
-<section class="grid--one grid--md-three-fifths spacing--gutter">
+<section class="section--content grid--one grid--md-three-fifths spacing--gutter">
 	 {% include 'components/blocks/block--breadcrumbs.twig' %}<br>
 	<div class="font--large">{{post.content}}</div>
 </section>

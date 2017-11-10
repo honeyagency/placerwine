@@ -1,9 +1,9 @@
-<section class="section--footer-links max-wrap margin--center spacing--gutter dsk--flex flex--wrap justify--between">
+<section class="section--footer-links max-wrap margin--center spacing--gutter spacing--vert-2 dsk--flex flex--wrap justify--between">
 	<nav role="navigation" class="grid--one grid--sm-half grid--lg-third order--1">
 		<strong class="">{{options.footer.area_1_title}}</strong>
 		<ul>
 			{% for item in options.footer.area_1_pages %}
-				<li class="nav-item inline-block">
+				<li class="nav-item inline">
 					<a class="nav-link color--red  font--bold" href="{{item.guid}}">{{item.post_title}}</a>{% if loop.last %}{% else %}<strong class="color--red  spacing--horiz-half">|</strong>{% endif %}
 				</li>
 			{% endfor %}
@@ -13,13 +13,13 @@
 		<strong class="">{{options.footer.area_2_title}}</strong>
 		<ul>
 			{% for item in options.footer.area_2_pages %}
-				<li class="nav-item inline-block">
+				<li class="nav-item inline">
 					<a class="nav-link color--red  font--bold" href="{{item.guid}}">{{item.post_title}}</a>{% if loop.last %}{% else %}<strong class="color--red  spacing--horiz-half">|</strong>{% endif %}
 				</li>
 			{% endfor %}
 		</ul>
 	</nav>
-	<div class="block--footer-social grid--one order--0 grid--one grid--lg-fourth flex flex--wrap justify--start align--items-center">
+	<div class="block--footer-social grid--one order--0 grid--one grid--lg-fourth flex flex--wrap justify--start align--items-center ">
 		<i class="icon-i80" data-grunticon-embed></i>
 		{% if options.social.facebook %}<a href="{{options.social.facebook.url}}" target="{{options.social.facebook.target}}" title="{{options.social.facebook.title}}"><i class="icon-social--facebook footer-social" data-grunticon-embed></i></a>{% endif %}
 		{% if options.social.twitter %}<a href="{{options.social.twitter.url}}" target="{{options.social.twitter.target}}" title="{{options.social.twitter.title}}"><i class="icon-social--twitter footer-social" data-grunticon-embed></i></a>{% endif %}
