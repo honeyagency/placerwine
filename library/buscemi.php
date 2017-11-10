@@ -32,14 +32,13 @@ if (!is_admin()) {
     add_action("wp_enqueue_scripts", "jquery_enqueue", 11);
 }
 
+function my_acf_init()
+{
 
-function my_acf_init() {
-    
     acf_update_setting('google_api_key', 'AIzaSyDxHQFHgV1lRfArFLElwZGMAuckUOfL2h0');
 }
 
 add_action('acf/init', 'my_acf_init');
-
 
 function jquery_enqueue()
 {
@@ -88,14 +87,12 @@ function cc_mime_types($mimes)
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
-
-
-
 // Exclude images from search results
-add_action( 'init', 'exclude_images_from_search_results' );
-function exclude_images_from_search_results() {
+add_action('init', 'exclude_images_from_search_results');
+function exclude_images_from_search_results()
+{
     global $wp_post_types;
- 
+
     $wp_post_types['attachment']->exclude_from_search = true;
 }
 

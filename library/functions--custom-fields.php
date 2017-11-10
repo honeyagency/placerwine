@@ -151,14 +151,15 @@ function prepareWineryFields()
         'description' => get_field('field_59fba61288e3e'),
         'events'      => get_field('field_59fdf79732e88'),
     );
-    $amenities = get_field('field_59fe00678e7a2');
-    if (!empty($amenities)) {
-        foreach ($amenities as $term) {
-            $amenitiylist[] = new TimberTerm($term);
+    $varietals = get_field('field_5a04e5d3d6115');
+    if (!empty($varietals)) {
+        foreach ($varietals as $term) {
+            $varietallist[] = new TimberTerm($term);
         }
     } else {
-        $amenitiylist = null;
+        $varietallist = null;
     }
+
     if (have_rows('field_59fe148b19fce')) {
         $press = array();
         while (have_rows('field_59fe148b19fce')) {
@@ -187,7 +188,6 @@ function prepareWineryFields()
             }
             $awards[] = array(
                 'image'       => $awardImage,
-
                 'publication' => get_sub_field('field_59fe2e286be26'),
                 'title'       => get_sub_field('field_59fe2e286be27'),
                 'link'        => get_sub_field('field_59fe2e286be28'),
@@ -197,6 +197,7 @@ function prepareWineryFields()
 
     $deets = array(
         'amenities' => $amenitiylist,
+        'varietals' => $varietals,
         'press'     => $press,
         'awards'    => $awards,
     );
@@ -208,10 +209,15 @@ function prepareWineryFields()
         'phone'    => get_field('field_59fb895d8523b'),
         'website'  => get_field('field_59fb89918523c'),
     );
+    $filter = array(
+        'dates'     => get_field('field_5a04d1cb7aa7f'),
+        'amenities' => $amenitiylist,
+    );
     $winery = array(
         'content' => $content,
         'deets'   => $deets,
         'sidebar' => $sidebar,
+        'filter'  => $filter,
     );
 
     return $winery;
