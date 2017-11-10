@@ -1,0 +1,30 @@
+<aside class="section--winery- grid--one grid--md-fourth spacing--vert-1 order--1">
+
+	<div class="margin--bot-1 grid--tab-half">
+		{% if event.end_date %}<div class="font--large font--bold">Dates:</div>{% else %}<div class="font--large font--bold">Date:</div>{% endif %}
+		<span class=""><span>{{event.start_date|date('M d')}} {% if event.end_date %}- {{event.end_date|date('d')}}{% endif %}</span></span>
+	</div>
+	{% if event.hours %}
+		<div class="margin--bot-1 grid--tab-half">
+			<div class="font--large font--bold">Hours:</div>
+			{{event.hours}}
+		</div>
+	{% endif %}
+	{% if event.cost %}
+		<div class="margin--bot-1 grid--tab-half">
+			<div class="font--large font--bold">Cost:</div>
+			{{event.cost}}
+		</div>
+	{% endif %}
+	{% if event.location %}
+		<div class="grid--tab-half">
+			<div class="font--large font--bold">Where:</div>
+			{{event.location}}
+		</div>
+	{% endif %}
+	{% if event.tickets %}
+		<div class="grid--tab-half">
+			<a class="font--large inline-block font--bold icon-underline bg--red color--white text--center spacing--vert-half spacing--horiz-1" href="{{event.tickets.url}}" title="{{event.tickets.title}}" target="{{event.tickets.target}}">{{event.tickets.title}}</a>
+		</div>
+	{% endif %}
+</aside>

@@ -63,6 +63,7 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
         return $array;
 
     }
+
 }
 
 function getSinglePost($posttype = null)

@@ -3,15 +3,8 @@
 <section class="section--single-header spacing--gutter margin--center max-wrap"><img src="{{post.thumbnail}}" width="100%"></section>
 <div class="max-wrap margin--center spacing--gutter margin--horiz-1">{% include 'components/blocks/block--breadcrumbs.twig' %}</div>
 <article class="flex flex--wrap justify--between align--items-start spacing--dsk-vert-4 winery-wrap margin--center spacing--gutter">
-	<section class="seciton--winery-content order--1 grid--one grid--sm-three-fifths">
-		<h1>{{post.title}}</h1>
-		{# {{event|print_r}} #}
-		<p class="font--large">{{event.description}}</p>
-		{{post.content}}
-	</section>
-	<aside class="section--winery-aside grid--one grid--md-fourth spacing--vert-1">
-
-	</aside>
-</article>
-
+	{% include 'components/sections/section--event-aside.twig' %}
+	{% include 'components/sections/section--event-content.twig' %}
+	{% include 'components/sections/section--event-details.twig' %}
+	</article>
 {% endblock %}

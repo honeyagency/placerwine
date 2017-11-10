@@ -116,11 +116,26 @@ function prepareHomepageFields()
 }
 function prepareEventFields()
 {
+
+    if (have_rows('field_5a05d6f761946')) {
+        $details = array();
+        while (have_rows('field_5a05d6f761946')) {
+            the_row();
+            $details[] = array(
+                'title'   => get_sub_field('field_5a05d6ff61947'),
+                'content' => get_sub_field('field_5a05d70561948'),
+            );
+        }
+    }
     $event = array(
         'start_date'  => get_field('field_59e92c5b89c00'),
         'end_date'    => get_field('field_59e92c7c89c01'),
-        'time'        => get_field('field_59e92ccd89c03'),
         'description' => get_field('field_59f125e6903fa'),
+        'details'     => $details,
+        'cost'        => get_field('field_5a05daeaac658'),
+        'location'    => get_field('field_5a05daf8ac659'),
+        'hours'       => get_field('field_5a05db04ac65a'),
+        'tickets'     => get_field('field_5a05daccac657'),
     );
     return $event;
 

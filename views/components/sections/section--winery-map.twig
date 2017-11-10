@@ -8,48 +8,54 @@
 
 
       	
-		var wineries = [{% for winery in wineries %}['{{winery.title}}', {{winery.winery.sidebar.location.lat}}, {{winery.winery.sidebar.location.lng}}, {{loop.index}}]{% if loop.last %}{% else %},{% endif %}{% endfor %}];
+		var wineries = [{% for winery in wineries %}['{{winery.title}}', {{winery.winery.sidebar.location.lat}}, {{winery.winery.sidebar.location.lng}}, {{loop.index}}, '<div class="wineryInfo"><strong>{{winery.title}}</strong><br>{{winery.winery.sidebar.location.address}}<br><a href="{{winery.link}}">visit page</a></div>']{% if loop.last %}{% else %},{% endif %}{% endfor %}];
       	
-      	var infoWindowContent =[{% for winery in wineries %}['{{winery.title}}']{% if loop.last %}{% else %},{% endif %}{% endfor %}];
+
       	
       	var styledMapType = new google.maps.StyledMapType([{"featureType":"all","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"all","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"all","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"all","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"off"},{"color":"#efebe2"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f3efe8"}]},{"featureType":"poi","elementType":"all","stylers":[{"color":"#efebe2"}]},{"featureType":"poi.attraction","elementType":"all","stylers":[{"color":"#efebe2"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"color":"#efebe2"}]},{"featureType":"poi.government","elementType":"all","stylers":[{"color":"#dfdcd5"}]},{"featureType":"poi.medical","elementType":"all","stylers":[{"color":"#dfdcd5"}]},{"featureType":"poi.park","elementType":"all","stylers":[{"color":"#bad294"}]},{"featureType":"poi.place_of_worship","elementType":"all","stylers":[{"color":"#efebe2"}]},{"featureType":"poi.school","elementType":"all","stylers":[{"color":"#efebe2"}]},{"featureType":"poi.sports_complex","elementType":"all","stylers":[{"color":"#efebe2"}]},{"featureType":"road","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"on"},{"hue":"#00c7ff"}]},{"featureType":"road","elementType":"labels.text","stylers":[{"hue":"#ff0000"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#193942"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels.icon","stylers":[{"visibility":"on"},{"hue":"#ff8c00"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#fbfbfb"}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#a5d7e0"}]}]);
       	
       	var mapCenter = {lat:{{options.default.location.lat}}, lng: {{options.default.location.lng}}};
         
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
+          zoom: 11,
           center: mapCenter
         });
-        
-        map.mapTypes.set('styled_map', styledMapType);
-        map.setMapTypeId('styled_map');
+          var pin = {
+          path: 'M39.49,20c0,11-19.74,33.42-19.74,33.42S0,31,0,20A19.85,19.85,0,0,1,19.75,0,19.85,19.85,0,0,1,39.49,20ZM19.75,12.37A7.67,7.67,0,1,0,27.41,20,7.66,7.66,0,0,0,19.75,12.37Z',
+          fillColor: '#ed5743',
+          fillOpacity: 1,
+          scale: 1,
+          strokeWeight: 0,
+        };
+         map.mapTypes.set('styled_map', styledMapType);
+         map.setMapTypeId('styled_map');
+         var infowindow = new google.maps.InfoWindow();
+         for (var i = 0; i < wineries.length; i++) {
+             var marker = new google.maps.Marker({
+                 position: new google.maps.LatLng(wineries[i][1], wineries[i][2]),
+                 map: map,
+                 icon: pin,
+                 title: wineries[i][0]
+             });
+             google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                 return function() {
+                     infowindow.setContent(wineries[i][4]);
+                     infowindow.open(map, marker);
+                 }
+             })(marker, i));
+         }
 
-        var infoWindow = new google.maps.InfoWindow(), marker, i;
-
-		for (var i = 0; i < wineries.length; i++) {
-		     var winery = wineries[i];
-		     var marker = new google.maps.Marker({
-		         position: {
-		             lat: winery[1],
-		             lng: winery[2]
-		         },
-		         map: map,
-		         title: winery[0],
-		         zIndex: winery[3]
-		     });
-
-		 }
-
-function AutoCenter() {
-//  Create a new viewpoint bound
-var bounds = new google.maps.LatLngBounds();
-//  Go through each...
-$.each(markers, function (index, marker) {
-bounds.extend(marker.position);
-});
-//  Fit these bounds to the map
-map.fitBounds(bounds);
-}
+         function AutoCenter() {
+             //  Create a new viewpoint bound
+             var bounds = new google.maps.LatLngBounds();
+             //  Go through each...
+             $.each(markers, function(index, marker) {
+                 bounds.extend(marker.position);
+             });
+             //  Fit these bounds to the map
+             map.fitBounds(bounds);
+         }
+         AutoCenter();
       }
     </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxHQFHgV1lRfArFLElwZGMAuckUOfL2h0&callback=initMap"></script>

@@ -58,4 +58,8 @@ jQuery(document).ready(function($) {
         $openNav.removeClass('open');
 
     });
+    $('#wineryfilter').submit(function(){
+   $(this).attr('action',$(this).attr('action')+$('#amenity_id').val());
+   $(this).submit();
+});
 });

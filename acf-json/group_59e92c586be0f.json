@@ -7,7 +7,6 @@
             "label": "Event Date Start",
             "name": "event_date",
             "type": "date_picker",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -25,7 +24,6 @@
             "label": "Event Date End",
             "name": "event_date_end",
             "type": "date_picker",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -39,16 +37,15 @@
             "first_day": 1
         },
         {
-            "key": "field_59e92ccd89c03",
-            "label": "Time",
-            "name": "time",
+            "key": "field_5a05daeaac658",
+            "label": "Cost",
+            "name": "cost",
             "type": "text",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -59,11 +56,63 @@
             "maxlength": ""
         },
         {
+            "key": "field_5a05daf8ac659",
+            "label": "Location",
+            "name": "location",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a05db04ac65a",
+            "label": "Hours",
+            "name": "hours",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a05daccac657",
+            "label": "Tickets Button",
+            "name": "tickets_button",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_59f125e6903fa",
             "label": "Event Description",
             "name": "event_description",
             "type": "textarea",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -77,6 +126,65 @@
             "maxlength": "",
             "rows": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_5a05d6f761946",
+            "label": "Event Details",
+            "name": "event_details",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Detail",
+            "sub_fields": [
+                {
+                    "key": "field_5a05d6ff61947",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5a05d70561948",
+                    "label": "Details",
+                    "name": "details",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                }
+            ]
         }
     ],
     "location": [
@@ -96,5 +204,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1509579934
+    "modified": 1510333195
 }

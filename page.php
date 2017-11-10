@@ -23,15 +23,27 @@
 
 $context = Timber::get_context();
 $post    = new TimberPost();
+$context['post'] = $post;
 
 if (is_page('home')) {
     $context['home'] = prepareHomepageFields();
 } elseif (is_page(10)) {
-    $context['wineries']  = getCustomPosts('winery', -1, null, 'title', null, null);
+	 if (!empty($_GET["amenity_id"])) {
+        $cat                     = $_GET["amenity_id"];
+        $context['currentFilter'] = new TimberTerm($cat);
+    } else {
+        $cat = null;
+    }
+
+    $context['wineries']  = getCustomPosts('winery', -1, null, 'title', null, $cat);
+
     $context['amenities'] = get_terms(array(
         'taxonomy'   => 'post_tag',
         'hide_empty' => false,
     ));
-}
-$context['post'] = $post;
+}elseif (is_page('events')) {
+    $context['events']  = getCustomPosts('event', -1, null, 'date', null, null);
+
+ }
+
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
