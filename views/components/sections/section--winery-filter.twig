@@ -1,22 +1,25 @@
-<section class="section--winery-filter">
+<section class="section--winery-filter margin--top-2">
 
-	<form id="wineryfilter" action="{{site.url}}/explore-our-wineries/?filter=amenity_id" method="get" accept-charset="utf-8">
-		<select name="amenity_id" id="amenity_id">
-			{% for amenity in amenities %}
-				<option value="{{amenity.term_id}}">{{amenity.name}}</option>
+	<form id="wineryfilter" action="{{site.url}}/explore-our-wineries/?filter=varietal_id" method="get" accept-charset="utf-8">
+		<select name="varietal_id" id="varietal_id" class="grid--sm-third icon-angle-down" >
+			{% if currentFilter != null %}
+				<option>{{currentFilter}}</option>
+			{% endif %}
+			{% for varietal in varietals %}
+				<option value="{{varietal.term_id}}">{{varietal.name}}</option>
 			{% endfor %}
 		</select>
-		<input type="submit" name="" value="Search">
+		<input type="submit" name="" class="font--large" value="Search">
 	</form>
-	<div class="block--day-filter font--large">
+	<div class="block--day-filter font--large flex flex--wrap justify--between spacing--vert-1">
 		<strong>Days open:</strong>
-		<a href="">Monday</a>
-		<a href="">Tuesday</a>
-		<a href="">Wednesday</a>
-		<a href="">Thursday</a>
-		<a href="">Friday</a>
-		<a href="">Saturday</a>
-		<a href="">Sunday</a>
+		<a class="color--black" href="">Monday</a><span class="hidden--mob spacing--horiz-half">|</span>
+		<a class="color--black" href="">Tuesday</a><span class="hidden--mob spacing--horiz-half">|</span>
+		<a class="color--black" href="">Wednesday</a><span class="hidden--mob spacing--horiz-half">|</span>
+		<a class="color--black" href="">Thursday</a><span class="hidden--mob spacing--horiz-half">|</span>
+		<a class="color--black" href="">Friday</a><span class="hidden--mob spacing--horiz-half">|</span>
+		<a class="color--black" href="">Saturday</a><span class="hidden--mob spacing--horiz-half">|</span>
+		<a class="color--black" href="">Sunday</a>
 	</div>
 </section>
 </script>

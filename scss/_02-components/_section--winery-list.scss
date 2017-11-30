@@ -3,7 +3,11 @@
 
     .block--winery {
         // border: 1px solid;
-   
+        h2 {
+            @include media($screen-sm) {
+                font-size: 2.5rem;
+            }
+        }
     }
 }
 

@@ -6,6 +6,7 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
         $category = get_cat_name($category);
     }
 
+    // print_r($tag);
     $args = array(
         'posts_per_page' => $limit,
         'post_type'      => $posttype,
@@ -30,13 +31,22 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
     elseif ($category != null) {
         $args['category_name'] = $category;
     }
-    if ($tag != null) {
+    if ($posttype == 'winery' && $tag != null) {
+        $args['tax_query'] = array(
+            array(
+                'taxonomy' => 'varietals',
+                'field'    => 'id',
+                'terms'    => array($tag),
+            ),
+        );
+    } elseif ($tag != null) {
         $args['tag'] = $tag;
     }
     // If there's an excluded post (for example, the current post) we add that here
     if ($excluded != null) {
         $args['post__not_in'] = array($excluded);
     }
+
 // print_r($args);
     $loop = new WP_Query($args);
 
@@ -85,9 +95,9 @@ function getSinglePost($posttype = null)
         'link'       => get_permalink(),
     );
     if ($posttype == 'event') {
-     
+
         $singlePostArray['event'] = prepareEventFields();
-    }elseif ($posttype == 'winery') {
+    } elseif ($posttype == 'winery') {
         $singlePostArray['winery'] = prepareWineryFields();
     }
     // Restores original Post Data

@@ -28,8 +28,8 @@ $context['post'] = $post;
 if (is_page('home')) {
     $context['home'] = prepareHomepageFields();
 } elseif (is_page(10)) {
-	 if (!empty($_GET["amenity_id"])) {
-        $cat                     = $_GET["amenity_id"];
+	 if (!empty($_GET["varietal_id"])) {
+        $cat                     = $_GET["varietal_id"];
         $context['currentFilter'] = new TimberTerm($cat);
     } else {
         $cat = null;
@@ -37,8 +37,8 @@ if (is_page('home')) {
 
     $context['wineries']  = getCustomPosts('winery', -1, null, 'title', null, $cat);
 
-    $context['amenities'] = get_terms(array(
-        'taxonomy'   => 'post_tag',
+    $context['varietals'] = get_terms(array(
+        'taxonomy'   => 'varietals',
         'hide_empty' => false,
     ));
 }elseif (is_page('events')) {

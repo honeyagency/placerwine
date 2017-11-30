@@ -1,0 +1,19 @@
+.section--winery-filter {
+    form {
+    	select{
+    		border-color: map-get($brown, dark);
+    		color: $gray;
+    		font-size: 1.2rem;
+    	}
+        [type="submit"] {
+            padding: 0;
+            font-weight: 600;
+            text-transform: none;
+            background: none;
+            border: none;
+            letter-spacing: 0;
+            color: map-get($red, main);
+        }
+    }
+    border-bottom:1px solid map-get($brown, dark);
+}
