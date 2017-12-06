@@ -1,5 +1,5 @@
 <?php
-function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 'title', $excluded = null, $tag = null)
+function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 'title', $excluded = null, $tag = null, $customfilter = null)
 {
 
     if (is_numeric($category)) {
@@ -39,10 +39,22 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
                 'terms'    => array($tag),
             ),
         );
+
+    } elseif ($posttype == 'winery' && $customfilter != null) {
+        $args['meta_query'] = array(
+            'relation' => 'OR',
+            array(
+                'key'     => 'days_open',
+                'value'   => $customfilter,
+                'compare' => 'LIKE',
+            ),
+
+        );
+
     } elseif ($tag != null) {
         $args['tag'] = $tag;
     }
-    // If there's an excluded post (for example, the current post) we add that here
+// If there's an excluded post (for example, the current post) we add that here
     if ($excluded != null) {
         $args['post__not_in'] = array($excluded);
     }
@@ -50,7 +62,7 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
 // print_r($args);
     $loop = new WP_Query($args);
 
-    // Empty array for the terms
+// Empty array for the terms
 
     if ($loop->have_posts()) {
         while ($loop->have_posts()) {
