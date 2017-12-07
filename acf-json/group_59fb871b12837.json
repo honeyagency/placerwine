@@ -382,13 +382,13 @@
                 "id": ""
             },
             "choices": {
-                "1": "Monday",
-                "2": "Tuesday",
-                "3": "Wednesday",
-                "4": "Thursday",
-                "5": "Friday",
-                "6": "Saturday",
-                "7": "Sunday"
+                "monday": "Monday",
+                "tuesday": "Tuesday",
+                "wednesday": "Wednesday",
+                "thursday": "Thursday",
+                "friday": "Friday",
+                "saturday": "Saturday",
+                "sunday": "Sunday"
             },
             "allow_custom": 0,
             "save_custom": 0,
@@ -624,5 +624,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1512517311
+    "modified": 1512690569
 }

@@ -46,7 +46,7 @@ if (is_page('home')) {
 
     $context['varietals'] = get_terms(array(
         'taxonomy'   => 'varietals',
-        'hide_empty' => false,
+        'hide_empty' => true,
     ));
 } elseif (is_page('events')) {
     $context['events'] = getCustomPosts('event', -1, null, 'date', null, null);

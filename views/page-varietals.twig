@@ -1,23 +1,21 @@
 {% extends "base.twig" %}
 {% block content %}
-<section class="section--single-header spacing--gutter-dsk margin--center max-wrap">
-	<img class="grid--one" data-original="{{post.thumbnail|resize(1320, 500)}}" alt="" class="header--img hidden--mob" data-original-set="{{post.thumbnail|resize(640, 242)}} 640w,{{post.thumbnail|resize(750, 284)}} 750w,{{post.thumbnail|resize(701, 266)}} 768w,{{post.thumbnail|resize(767,291)}} 834w,{{post.thumbnail|resize(1914, 726)}} 1024w,{{post.thumbnail|resize(2026, 768)}} 1080w" alt="Image for {{ post.title }}">
-<div class="block--overlap-page-titles bg--brown-light grid--gutter grid--sm-three-fifths grid--md-two-fifths spacing--dsk-vert-2 spacing--dsk-horiz-2 spacing--gutter-mob"><h1 class="article-h1">{{post.title}}</h1></div>
-</section>
-
-<article class="post-type-{{post.post_type}} flex flex--wrap justify--between align--items-start spacing--dsk-vert-1 max-wrap margin--center" id="post-{{post.ID}}">
-<section class="section--content grid--one grid--md-three-fifths spacing--gutter margin--bot-2 margin--mob-bot-1">
-	 {% include 'components/blocks/block--breadcrumbs.twig' %}<br>
-	<div class="font--large">{{post.content}}</div>
-</section>
-<section class="section--winery-list spacing--gutter max-wrap margin--center">
-{% for varietal in varietals %}
-	<div class="block--winery grid--one flex flex--wrap justify--between align--items-start border--1 spacing--vert-2">	
-	<h2 class="grid--one grid--sm-fourth font--standard color--brown-dark">{{varietal.title}}</h2>
-	<div class="winery--details grid--one grid--sm-three-fourths font--medium">{{varietal.content}}</div>
-</div>
-	{% endfor %}
-</section>
-</article>
-
+	<section class="section--single-header spacing--gutter-dsk margin--center max-wrap">
+		<img class="grid--one" data-original="{{post.thumbnail|resize(1320, 500)}}" alt="" class="header--img hidden--mob" data-original-set="{{post.thumbnail|resize(640, 242)}} 640w,{{post.thumbnail|resize(750, 284)}} 750w,{{post.thumbnail|resize(701, 266)}} 768w,{{post.thumbnail|resize(767,291)}} 834w,{{post.thumbnail|resize(1914, 726)}} 1024w,{{post.thumbnail|resize(2026, 768)}} 1080w" alt="Image for {{ post.title }}">
+		<div class="block--overlap-page-titles bg--brown-light grid--gutter grid--sm-three-fifths grid--md-two-fifths spacing--dsk-vert-2 spacing--dsk-horiz-2 spacing--gutter-mob"><h1 class="article-h1">{{post.title}}</h1></div>
+	</section>
+	<article class="post-type-{{post.post_type}} flex flex--wrap justify--between align--items-start spacing--dsk-vert-1 max-wrap margin--center" id="post-{{post.ID}}">
+		<section class="section--content grid--one grid--md-three-fifths spacing--gutter margin--bot-2 margin--mob-bot-1">
+			{% include 'components/blocks/block--breadcrumbs.twig' %}<br>
+			<div class="font--large">{{post.content}}</div>
+		</section>
+		<section class="section--winery-list spacing--gutter max-wrap margin--center">
+			{% for varietal in varietals %}
+				<div class="block--winery grid--one flex flex--wrap justify--between align--items-start border--1 spacing--vert-2">
+					<h2 class="grid--one grid--sm-fourth font--standard color--brown-dark">{{varietal.title}}</h2>
+					<div class="winery--details grid--one grid--sm-three-fourths font--medium">{{varietal.content}}</div>
+				</div>
+			{% endfor %}
+		</section>
+	</article>
 {% endblock %}
