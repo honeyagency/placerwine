@@ -4,7 +4,7 @@
 		{% for child in post.children %}
 			
 			<div class="block--child grid--one md--flex flex--wrap align--items-center spacing--vert-1 spacing--dsk-vert-2 {% if loop.index is even %}justify--end{% else %}justify--start{% endif %}">
-				<img class="grid--one grid--md-two-thirds order--1" alt="{{child.thumbnail.alt}}" src="{{child.thumbnail.src|resize(873)}}">
+				<img class="grid--one grid--md-two-thirds order--1" alt="{{child.thumbnail.alt}}" data-original="{{child.thumbnail.src|resize(873,580)}}">
 				<div class="child--title bg--brown-light inline-block spacing--vert-1 spacing--dsk-horiz-2 spacing--dsk-vert-2 grid--md-third-max border-box {% if loop.index is even %}order--0{% else %}order--1{% endif %}">
 					<h2>{{ child.title }}</h2>
 					<a class="font--large font--bold" href="{{ child.link }}">Read More</a>
@@ -16,7 +16,7 @@
 	{% for event in events %}
 			
 			<div class="block--child grid--one md--flex flex--wrap align--items-center spacing--vert-1 spacing--dsk-vert-2 {% if loop.index is even %}justify--end{% else %}justify--start{% endif %}">
-				<img class="grid--one grid--md-two-thirds order--1" alt="{{event.image.alt}}" src="{{event.image.src|resize(873)}}">
+				<img class="grid--one grid--md-two-thirds order--1" alt="{{event.image.alt}}" data-original="{{event.image.src|resize(873,580)}}">
 				<div class="child--title bg--brown-light inline-block spacing--vert-1 spacing--dsk-horiz-2 spacing--dsk-vert-2 grid--md-third-max border-box {% if loop.index is even %}order--0{% else %}order--1{% endif %}">
 						<span class="color--black  font--bold font--medium"><span>{{event.event.start_date|date('M d')}}{% if event.event.end_date %}&ndash;{{event.event.end_date|date('d')}}{% endif %}</span></span>
 					<h2>{{ event.title }}</h2>
