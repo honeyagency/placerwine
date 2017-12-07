@@ -107,7 +107,6 @@ nav {
         }
 
         .nav-drop {
-
             left: 50%;
             transform: translateX(-50%);
             width: 150%;
@@ -117,6 +116,18 @@ nav {
                 background-color: map-get($brown, light);
                 width: 100%;
             }
+        }
+    }
+}
+
+.nav-drop-item {
+    @include media($screen-sm) {
+        &:first-of-type {
+            padding-top: 1em !important;
+        }
+
+        &:last-of-type {
+            padding-bottom: 1em !important;
         }
     }
 }
