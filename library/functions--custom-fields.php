@@ -250,3 +250,17 @@ function prepareWineryFields()
 
     return $winery;
 }
+
+function prepareVarietalsPage(){
+    if (have_rows('field_5a29c64cb68e3')) {
+        $varietals = array();
+        while (have_rows('field_5a29c64cb68e3')) {
+            the_row();
+            $varietals[] = array(
+                'title'   => get_sub_field('field_5a29c656b68e4'),
+                'content' => get_sub_field('field_5a29c65cb68e5'),
+            );
+        }
+    }   
+    return $varietals;
+}

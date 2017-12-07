@@ -51,6 +51,9 @@ if (is_page('home')) {
 } elseif (is_page('events')) {
     $context['events'] = getCustomPosts('event', -1, null, 'date', null, null);
 
+}elseif (is_page('varietals')) {
+    $context['varietals'] = prepareVarietalsPage();
+
 }
 
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
