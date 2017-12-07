@@ -131,6 +131,7 @@ function prepareEventFields()
         'start_date'  => get_field('field_59e92c5b89c00'),
         'end_date'    => get_field('field_59e92c7c89c01'),
         'description' => get_field('field_59f125e6903fa'),
+        'content'     => get_field('field_5a29d26af312f'),
         'details'     => $details,
         'cost'        => get_field('field_5a05daeaac658'),
         'location'    => get_field('field_5a05daf8ac659'),
@@ -251,7 +252,8 @@ function prepareWineryFields()
     return $winery;
 }
 
-function prepareVarietalsPage(){
+function prepareVarietalsPage()
+{
     if (have_rows('field_5a29c64cb68e3')) {
         $varietals = array();
         while (have_rows('field_5a29c64cb68e3')) {
@@ -261,6 +263,6 @@ function prepareVarietalsPage(){
                 'content' => get_sub_field('field_5a29c65cb68e5'),
             );
         }
-    }   
+    }
     return $varietals;
 }
