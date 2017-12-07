@@ -110,10 +110,10 @@
         },
         {
             "key": "field_59f125e6903fa",
-            "label": "Event Description",
+            "label": "Event Introduction",
             "name": "event_description",
             "type": "textarea",
-            "instructions": "",
+            "instructions": "Short piece of content, this will be displayed on the homepage.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -126,6 +126,25 @@
             "maxlength": "",
             "rows": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_5a29d26af312f",
+            "label": "Event Content",
+            "name": "event_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_5a05d6f761946",
@@ -201,8 +220,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1510333195
+    "modified": 1512690680
 }
