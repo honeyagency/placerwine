@@ -86,6 +86,14 @@
     }
 }
 
+.hidden--tab {
+    @include media($max-lg) {
+        @include media($screen-sm) {
+            display: none !important;
+        }
+    }
+}
+
 .hidden--md {
     @include media($max-md) {
         display: none !important;

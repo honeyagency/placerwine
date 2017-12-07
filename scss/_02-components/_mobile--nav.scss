@@ -1,21 +1,21 @@
 @include media($max-sm) {
     .main--header {
+        margin-bottom: -1em;
         min-height: 120px;
-        background-color: map-get($brown, light);
         position: relative;
 
-        &:before {
-            content: ' ';
-            display: block;
-            z-index: 1000;
-            background-color: map-get($brown, light);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            right: 0;
-            height: 120px;
-        }
+        // &:before {
+        //     content: ' ';
+        //     display: block;
+        //     z-index: 1000;
+        //     background-color: map-get($brown, light);
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     width: 100%;
+        //     right: 0;
+        //     height: 120px;
+        // }
 
         .menu--trigger {
             float: right;
@@ -69,7 +69,7 @@
             height: 0;
             -webkit-transform: translate3d(0, 0, 0);
             opacity: 0;
-            transition: height 0.3s $base-cubic, top 0.3s $base-cubic, opacity .3s $base-cubic;
+            transition: height 0.3s $base-cubic, top 0.3s $base-cubic, opacity 0.3s $base-cubic;
             left: 0;
             right: 0;
             top: -7.5em;
@@ -307,10 +307,11 @@
             }
 
             .main-nav {
-                top: 7.5em;
+                top: 6.6em;
                 height: 100vh;
                 opacity: 1;
-                transition: height 0.3s $base-cubic, top 0.3s $base-cubic, opacity .3s $base-cubic;
+                transition: height 0.3s $base-cubic, top 0.3s $base-cubic, opacity 0.3s $base-cubic;
+                padding-top: 2.3em;
 
                 ul {
                     .nav-item {

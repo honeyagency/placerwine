@@ -1,7 +1,7 @@
-<nav role="navigation" class="text--center main-nav grid--sm-half align--items-end spacing--vert-1 spacing--gutter-mob">
-	<ul class="nav-list dsk--flex flex--wrap justify--center mar--no align--items-center">
+<nav role="navigation" class="text--center main-nav grid--sm-two-thirds grid--md-two-thirds grid--lg-three-fifths grid--xl-half align--items-end spacing--vert-1 spacing--gutter-mob">
+	<ul class="nav-list dsk--flex flex--wrap justify--around mar--no align--items-center">
 		{% for item in menu.get_items %}
-			<li class="nav-item {{item.classes | join(' ')}} ">
+			<li class="nav-item grid--sm-third {{item.classes | join(' ')}} ">
 				<a class="top-level nav-link color--blue font--bold font--large" href="{{item.get_link}}">{{item.title}}</a>
 
 				{% if item.get_children %}
@@ -17,7 +17,7 @@
 				{% endif %}
 				
 			</li>
-			{% if loop.last %}{% else %}<span class="hidden--mob">|</span>{% endif %}
+			{% if loop.last %}{% else %}<span class="hidden--mob hidden--tab">|</span>{% endif %}
 		{% endfor %}
 	</ul>
 	<div class="hidden--dsk">{{options.search.form}}</div>

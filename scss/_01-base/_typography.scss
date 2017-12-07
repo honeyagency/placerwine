@@ -42,8 +42,6 @@ h2 {
     font-size: 1.5em;
     letter-spacing: 0;
     line-height: 1.1;
-        margin-bottom: 0.5em;
-    margin-top: 1em;
 
     &.large {
         @include media($screen-xs) {}
@@ -55,6 +53,13 @@ h2 {
 
 
         margin-bottom: .5em;
+    }
+}
+
+.section--content {
+    h2 {
+        margin-bottom: 0.5em;
+        margin-top: 1em;
     }
 }
 

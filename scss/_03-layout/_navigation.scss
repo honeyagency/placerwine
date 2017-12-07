@@ -94,8 +94,6 @@ nav {
 .main--header {
     @include media($screen-sm) {
         .nav-item {
-            padding: 0 1em;
-
             ul {
                 position: absolute;
                 margin: 0 auto !important;
@@ -116,6 +114,22 @@ nav {
                 background-color: map-get($brown, light);
                 width: 100%;
             }
+        }
+    }
+
+
+    @include media($screen-md) {
+        justify-content: flex-start !important;
+
+        nav {
+            margin-left: 1em;
+        }
+    }
+
+
+    .top-level {
+        @include media($max-md) {
+            font-size: 1em;
         }
     }
 }

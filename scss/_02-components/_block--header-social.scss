@@ -1,6 +1,7 @@
 .block--header-social {
-	text-align: center;
-	a {
+    text-align: center;
+
+    a {
         i {
             width: 20px;
             height: 20px;
@@ -14,18 +15,30 @@
             }
         }
     }
-	@include media($screen-xs){}
-	@include media($screen-sm){
-		text-align: right;
-		a{
-			i{
-				  width: 13px;
-            height: 13px;
-			}
-		}
-	}
-	@include media($screen-md){}
-	@include media($screen-lg){}
-	@include media($screen-xl){}
-    
+
+    @include media($screen-xs) {}
+
+
+    @include media($screen-md) {
+        text-align: right;
+
+        a {
+            i {
+                margin-left: 10px;
+
+                // width: 13px;
+                // height: 13px;
+           
+            }
+        }
+    }
+
+
+    @include media($screen-md) {}
+
+
+    @include media($screen-lg) {}
+
+
+    @include media($screen-xl) {}
 }
