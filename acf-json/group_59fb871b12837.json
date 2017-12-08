@@ -124,8 +124,8 @@
                     "field_type": "select",
                     "allow_null": 0,
                     "add_term": 1,
-                    "save_terms": 1,
-                    "load_terms": 1,
+                    "save_terms": 0,
+                    "load_terms": 0,
                     "return_format": "object",
                     "multiple": 0
                 },
@@ -664,5 +664,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1512693857
+    "modified": 1512694032
 }
