@@ -1,9 +1,9 @@
 .block--search-modal {
-    transition: transform 0.5s $base-cubic;
-    transform: translateX(-50%) translateY(-275%);
+    transition: top 0.5s $base-cubic;
+    transform: translateX(-50%) translateY(-50%);
     position: absolute;
     padding-top: 3em !important;
-    top: 50%;
+    top: -100%;
     left: 50%;
     z-index: 99999999;
 
@@ -64,13 +64,13 @@ body {
         z-index: -1;
         position: absolute;
         display: block;
-        transition:  z-index 2s ease, transform 0.3s $base-cubic, opacity 0.2s $base-cubic;
+        transition: z-index 2s ease, transform 0.3s $base-cubic, opacity 0.2s $base-cubic;
     }
 
     &.search-is-open {
         .block--search-modal {
-            transition: transform 0.5s $base-cubic;
-            transform: translateY(-50%) translateX(-50%);
+            transition: top 0.5s $base-cubic;
+            top: 50%;
         }
 
         &:after {
