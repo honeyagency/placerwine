@@ -6,6 +6,11 @@
         h2 {
             @include media($screen-sm) {
                 font-size: 2.5rem;
+                -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    -o-hyphens: none;
+    hyphens: none;
             }
         }
     }

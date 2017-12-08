@@ -1,67 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>Placer Wine Wordpress Documentation</title>
+	</head>
+<body>
 <h1>Placer Wine Wordpress Documentation</h1>
-<p>Hi there! This document lives here to give you some basic information about your WordPress site and how to update it. The first few sections are general to all Honey Agency WordPress installations, and the rest is specific to your site. Let’s get started!</p>
+
+<p>Hi there! This document lives here to give you some basic information about your WordPress site and how to update it. The first few sections are general to all Honey Agency WordPress installations, and the rest is specific to your site. Let&#39;s get started!</p>
+
 <h6>Table of Contents</h6>
+
 <ul>
 	<li><a href="#placer-wine-wordpress-documentation">Placer Wine Wordpress Documentation</a></li>
 	<li><a href="#wordpress-overview">WordPress Overview</a></li>
 	<li><a href="#logging-in">Logging In</a></li>
 	<li><a href="#media-library">Media Library</a>
-	<ul>
-		<li><a href="#adding-a-media-item">Adding a Media Item</a></li>
-	</ul></li>
+
+		<ul>
+			<li><a href="#adding-a-media-item">Adding a Media Item</a></li>
+		</ul></li>
 	<li><a href="#adding/editing-a-page">Adding/Editing a Page</a>
-	<ul>
-		<li><a href="#adding-a-new-page">Adding A New Page</a></li>
-		<li><a href="#content">Content</a></li>
-		<li><a href="#published-/-draft-/-schedulded-/-private">Published / Draft / Schedulded / Private</a></li>
-		<li><a href="#editing-a-page">Editing a Page</a></li>
-	</ul></li>
+
+		<ul>
+			<li><a href="#adding-a-new-page">Adding A New Page</a></li>
+			<li><a href="#content">Content</a></li>
+			<li><a href="#published-/-draft-/-schedulded-/-private">Published / Draft / Schedulded / Private</a></li>
+			<li><a href="#editing-a-page">Editing a Page</a></li>
+		</ul></li>
 	<li><a href="#adding-featured-images">Adding Featured Images</a></li>
+	<li>Updating Site Options</li>
+	<li>Adding content to a winery</li>
+	<li>Adding content to events</li>
 </ul>
+
 <hr />
-<p><a name="wordpress-overview"></a></p>
+
 <h3>WordPress Overview</h3>
-<p>If you’re somewhat familiar with WordPress, feel free to skip to the next section, but it’s not integral to understanding your new website. WordPress is a Content Management System (CMS) — at a basic level it performs the following functions:</p>
+
+<p>If you&#39;re somewhat familiar with WordPress, feel free to skip to the next section, but it&#39;s not integral to understanding your new website. WordPress is a Content Management System (CMS) - at a basic level it performs the following functions:</p>
+
 <ol>
 	<li>Displaying content to users. (Frontend)</li>
 	<li>Providing a secure, simple location for site-owners to update that content. (Backend)</li>
 </ol>
-<p>At Honey Agency, we custom-build the backend so site-owners don’t need to worry about code or formatting, there’s a few fields that you fill out and we take care of formatting via code. We usually re-size images for you as well; so unless you see a note about image sizes when you are uploading them we’re taking care of the size on the front-end.</p>
-<p>WordPress breaks down content into <code>pages</code> and <code>posts</code>. A <code>page</code> is the most general form of webpage content: you have some text, possibly an image, and you can access that content via a URL. A <code>post</code> is similar to a <code>page</code>, but it’s hierarchy is based on the model of a blog: you generally have the text and image content that you’d have with a <code>page</code>, but posts are displayed in <strong>series</strong> and usually have a <strong>date</strong> and an <strong>author</strong>. These are generalizations, but are the basic grounds of how a lot of the web is built. </p>
-<p>At Honey Agency, we try to separate content-types into custom versions of a <code>post</code> to make the website hierarchy more simple and streamlined for clients. For example at honeyagency.com, we have a <strong>team</strong> page with individual <strong>team members</strong> so we have a custom <code>post</code> that’s called <code>Team Member</code>. When you want to add a new team member you don’t have to custom-format anything, you just click <strong>Add New Team Member</strong> on the backend; once you fill out all the content required the team member is automatically populated in different places on the site. Depending on your site, you might have a few custom-posts that we’ll go over in the sections below.</p>
+
+<p>At Honey Agency, we custom-build the backend so site-owners don&#39;t need to worry about code or formatting, there&#39;s a few fields that you fill out and we take care of formatting via code. We usually re-size images for you as well; so unless you see a note about image sizes when you are uploading them we&#39;re taking care of the size on the front-end.</p>
+
+<p>WordPress breaks down content into <code>pages</code> and <code>posts</code>. A <code>page</code> is the most general form of webpage content: you have some text, possibly an image, and you can access that content via a URL. A <code>post</code> is similar to a <code>page</code>, but it&#39;s hierarchy is based on the model of a blog: you generally have the text and image content that you&#39;d have with a <code>page</code>, but posts are displayed in <strong>series</strong> and usually have a <strong>date</strong> and an <strong>author</strong>. These are generalizations, but are the basic grounds of how a lot of the web is built.</p>
+
+<p>At Honey Agency, we try to separate content-types into custom versions of a <code>post</code> to make the website hierarchy more simple and streamlined for clients. For example at honeyagency.com, we have a <strong>team</strong> page with individual <strong>team members</strong> so we have a custom <code>post</code> that&#39;s called <code>Team Member</code>. When you want to add a new team member you don&#39;t have to custom-format anything, you just click <strong>Add New Team Member</strong> on the backend; once you fill out all the content required the team member is automatically populated in different places on the site. Depending on your site, you might have a few custom-posts that we&#39;ll go over in the sections below.</p>
+
 <hr />
-<p><a name="logging-in"></a></p>
+
 <h3>Logging In</h3>
-<p>Logging in to your WordPress site is easy: just add <code>/wp-login</code> to the end of your URL, use the Password and Username (or email) provided and you’re on your way. Once you login you will see what’s called the <strong>WordPress dashboard</strong>—from here you can get anywhere you need to update content. If you look at the homepage of your site while logged in, there will be a black-bar along the top of the page with links to various site functions.</p>
+
+<p>Logging in to your WordPress site is easy: just add <code>/wp-login</code> to the end of your URL, use the Password and Username (or email) provided and you&#39;re on your way. Once you login you will see what&#39;s called the <strong>WordPress dashboard</strong>-from here you can get anywhere you need to update content. If you look at the homepage of your site while logged in, there will be a black-bar along the top of the page with links to various site functions.</p>
+
 <hr />
-<p><a name="media-library"></a></p>
+
 <h3>Media Library</h3>
-<p>One of the perks of having a site with a CMS is that you have a centralized location for any images you’ve added site-wide. So anytime you upload images, PDFs, audio, etc to a post, a page, or a custom post they’ll be added to a folder similar to the <code>Photos</code> or <code>Pictures</code> folder on your computer.</p>
-<p>To get to your Media Library, click the <code>Media Library</code> navigation item in the left-hand side menu in the WordPress dashboard. You’ll be presented with a gallery of all the images currently on your site. </p>
-<p><a name="adding-a-media-item"></a></p>
+
+<p>One of the perks of having a site with a CMS is that you have a centralized location for any images you&#39;ve added site-wide. So anytime you upload images, PDFs, audio, etc to a post, a page, or a custom post they&#39;ll be added to a folder similar to the <code>Photos</code> or <code>Pictures</code> folder on your computer.</p>
+
+<p>To get to your Media Library, click the <code>Media Library</code> navigation item in the left-hand side menu in the WordPress dashboard. You&#39;ll be presented with a gallery of all the images currently on your site.</p>
+
 <h5>Adding a Media Item</h5>
-<p>To add a media item, click <code>Add New</code> from the <code>Media Library</code>. From here you can drag-and-drop however many images you like (note the Maximum upload file size, this is per-file) and they’ll automatically be added and have URL’s generated for them. Usually, you’ll simply upload images or PDFs directly to a post or page, in which case they’ll be added to this library.</p>
+
+<p>To add a media item, click <code>Add New</code> from the <code>Media Library</code>. From here you can drag-and-drop however many images you like (note the Maximum upload file size, this is per-file) and they&#39;ll automatically be added and have URL&#39;s generated for them. Usually, you&#39;ll simply upload images or PDFs directly to a post or page, in which case they&#39;ll be added to this library.</p>
+
 <hr />
-<p><a name="adding/editing-a-page"></a></p>
+
 <h3>Adding/Editing a Page</h3>
-<p>In the WordPress overview, you heard that the <code>page</code> is the most basic form of content in WordPress, this is how we’ll add &amp; edit those. </p>
-<p><a name="adding-a-new-page"></a></p>
+
+<p>In the WordPress overview, you heard that the <code>page</code> is the most basic form of content in WordPress, this is how we&#39;ll add &amp; edit those.</p>
+
 <h5>Adding A New Page</h5>
-<p>Once you’re logged in you can add a new page from either:</p>
+
+<p>Once you&#39;re logged in you can add a new page from either:</p>
+
 <ol>
 	<li>The black bar along the top of the site, hover (tap on mobile) over <code>+ New</code> and click <code>Page</code></li>
-	<li>From the dashboard, there’s a navigation item on the left-hand side of the page called <strong>Pages.</strong> Click this and click <code>Add New</code>.</li>
+	<li>From the dashboard, there&#39;s a navigation item on the left-hand side of the page called <strong>Pages.</strong> Click this and click <code>Add New</code>.</li>
 </ol>
-<p>You’ll be taken to the backend of a page with no title or content, when you add a title the URL will automatically be generated for you. If you want to change that URL click the area of text you want to change and edit the text, WordPress will automatically convert your text to lower-case and will replace spaces with hyphens to be URL-compatible.</p>
-<h6>Content<br/><a name="content"></a></h6>
+
+<p>You&#39;ll be taken to the backend of a page with no title or content, when you add a title the URL will automatically be generated for you. If you want to change that URL click the area of text you want to change and edit the text, WordPress will automatically convert your text to lower-case and will replace spaces with hyphens to be URL-compatible.</p>
+
+<h6>Content </h6>
+
 <p>After you have your title and URL set, you can use the area below to add content. The large white text-box is called a <strong>WYSIWYG</strong> (<strong>W</strong>hat <strong>Y</strong>ou <strong>S</strong>ee <strong>I</strong>s <strong>W</strong>hat <strong>Y</strong>ou <strong>G</strong>et) and will operate similarly to Microsoft Word, Apple Pages, or Google Docs.</p>
-<p><a name="published-/-draft-/-schedulded-/-private"></a></p>
+
 <h6>Published / Draft / Schedulded / Private</h6>
-<p>You’ll see a bar on the right-hand side of the page with options for publishing the page. To publish (make the page go live) the page, click <code>Publish</code>. If you don’t want people to see the content, you can choose <code>Save Draft</code>. If you want to schedule the page, you can change the date where you see <strong>Publish immediately.</strong> If you want to publish the page but <strong>only want people who are logged into the site to see it</strong> (other admins) you can choose <code>Private</code> under the <strong>Visibility</strong> option.</p>
-<p><a name="editing-a-page"></a></p>
+
+<p>You&#39;ll see a bar on the right-hand side of the page with options for publishing the page. To publish (make the page go live) the page, click <code>Publish</code>. If you don&#39;t want people to see the content, you can choose <code>Save Draft</code>. If you want to schedule the page, you can change the date where you see <strong>Publish immediately.</strong> If you want to publish the page but <strong>only want people who are logged into the site to see it</strong> (other admins) you can choose <code>Private</code> under the <strong>Visibility</strong> option.</p>
+
 <h5>Editing a Page</h5>
-<p>To edit a page that is already created, you can either click <code>Edit Page</code> in the black top-bar when you’re looking at the page from the front-end, or you can find the page by clicking <code>Pages</code> in the dashboard and clicking the blue title of the page you’re looking for from the list of pages.</p>
+
+<p>To edit a page that is already created, you can either click <code>Edit Page</code> in the black top-bar when you&#39;re looking at the page from the front-end, or you can find the page by clicking <code>Pages</code> in the dashboard and clicking the blue title of the page you&#39;re looking for from the list of pages.</p>
+
 <hr />
-<p><a name="adding-featured-images"></a></p>
+
 <h3>Adding Featured Images</h3>
-<p>Featured images are used as the header image and the social media “share image” (the little preview-picture people see when you share a link on a social media platform) if there isn’t a custom header image on your site. These are located on the right-hand side of the page when you’re editing a <code>page</code>, a <code>post</code>, or any type of <code>custom post</code>. Click <code>Set Featured Image</code> and you’ll see a pop-up that should be populated with your media library. You can select a previously uploaded image or click the <code>Upload Files</code> tab at the top of this pop-up to upload an image.</p>
+
+<p>Featured images are used as the header image and the social media &quot;share image&quot; (the little preview-picture people see when you share a link on a social media platform) if there isn&#39;t a custom header image on your site. These are located on the right-hand side of the page when you&#39;re editing a <code>page</code>, a <code>post</code>, or any type of <code>custom post</code>. Click <code>Set Featured Image</code> and you&#39;ll see a pop-up that should be populated with your media library. You can select a previously uploaded image or click the <code>Upload Files</code> tab at the top of this pop-up to upload an image.</p>
+
+<hr />
+
+<h3>Updating Site Options</h3>
+
+<p>Site options is the location where you’ll find places to update the following:</p>
+
+<ul>
+	<li>Social Media URLs</li>
+	<li>Defaults</li>
+	<li>Search Box Content</li>
+</ul>
+
+<h5>Social Media URLs</h5>
+
+<p>Social media URLs are simple to update, and when the links are left blank it will hide the icons on the front-end, making it easy to toggle on and off.</p>
+
+<p>To add a link, click the pencil icon, a box with a place to add the link as well as a title will pop up, all you need to do is fill those in.</p>
+
+<h5>Defaults</h5>
+
+<p><strong>Default Site Image</strong> </p>
+
+<p>This is the image that&#39;s displayed for social media, link sharing, etc when the shared page has no image, it should be large, but you most likely won’t need to update it.</p>
+
+<p><strong>Map Center</strong> </p>
+
+<p>This is the default center of any map on the website, it allows you to enter an address and is powered by google maps.</p>
+
+<p><strong>404 Text</strong> </p>
+
+<p>This is where you can edit the copy that is displayed on the 404 page.</p>
+
+<h5>Search Box Content</h5>
+
+<p><strong>Search Modal Title</strong> </p>
+
+<p>This is the title in the search pop-up</p>
+
+<p><strong>Search modal text</strong> </p>
+
+<p>This is the explanation text in the search pop-up</p>
+
+<p><strong>Search Form Placeholder</strong> </p>
+
+<p>This is the content that is grayed-out within the search field.</p>
+
+<p><strong>Search Form Button</strong></p>
+
+<p>This is the text in the search button. </p>
+
+<p><strong>Search link text</strong> </p>
+
+<p>This is the text that explains the search text </p>
+
+<p><strong>Search Links</strong></p>
+
+<p>Add a few links that might more quickly get people to what they&#39;re looking for while searching.</p>
+
+<h3>Adding Content to a Winery</h3>
+
+<p>Winery content is important because each winery influences the map and the content on the <strong>Explore Our Wineries</strong> page. The wineries are broken up into 5 sections. The featured image you learned about earlier in the documentation is used for the header image as well as the image that displays next to the winery introduction on the <strong>Explore Our Wineries</strong> page.</p>
+
+<p>The five sections wineries are broken into are:</p>
+
+<ul>
+	<li>Content</li>
+	<li>Amenities &amp; Varietals</li>
+	<li>Press &amp; Awards</li>
+	<li>Days &amp; Hours</li>
+	<li>Contact Information</li>
+</ul>
+
+<h5>Content</h5>
+
+<p>This section contains the following:</p>
+
+<p><strong>Logo</strong></p>
+
+<p>This displays in the sidebar, it’s automatically resized, so use an image 500px or larger.</p>
+
+<p><strong>Short Description</strong> </p>
+
+<p>This is a short one-sentence description that displays on the list of wineries.</p>
+
+<p><strong>Winery Content</strong> </p>
+
+<p>This is the main content that displays on the left-hand-side of the winery pages.</p>
+
+<p><strong>Events Page Link</strong> </p>
+
+<p>If the winery has an events page, this will link to it directly. This is optional and is separate from the winery website URL.</p>
+
+<h6>Amenities &amp; Varietals</h6>
+
+<p>Amenities and Varietals are shared between wineries. That means there are a finite number of amenities and varietals to choose from, more can be added to each but a smaller number will be more beneficial to the user.</p>
+
+<p><strong>Amenities</strong> </p>
+
+<p>Each Amenity item has an optional text area on the right that can be used to provide more information about a specific amenity. For example “Please call ahead for busses or limos”</p>
+
+<p><strong>Varietals Produced</strong> </p>
+
+<p>Start typing the name of a varietal and it will appear, click it and you’re done! This is used to filter varietals on the <strong>Explore Our Wineries</strong> page. If a winery wants to go into more detail on their varietals, they can do so in the content area.</p>
+
+<h5>Press &amp; Awards</h5>
+
+<p>Each of these sections have repeating content areas, so you “add an item” and it will appear below the previous one. </p>
+
+<p><strong>Press</strong> </p>
+
+<ul>
+	<li>Image - (a 120px x 120px image can be added)</li>
+	<li>Publication - Name of publication</li>
+	<li>Press Title - Title of the press item</li>
+	<li>Press Link - Link to the press item</li>
+</ul>
+
+<p><strong>Awards</strong> </p>
+
+<ul>
+	<li>Image - (a 120px x 120px image can be added)</li>
+	<li>Award Subject - The competition or subject in question</li>
+	<li>Award Title - The award title</li>
+	<li>Award Link - An optional link to the award</li>
+</ul>
+
+<h5>Days &amp; Hours</h5>
+
+<p><strong>Days Open (For winery filtering)</strong> </p>
+
+<p>This data informs filtering on the winery page, check each box that the winery is open.</p>
+
+<p><strong>Open Dates</strong> </p>
+
+<p>This displays on the winery page in the sidebar, it’s useful for adding date information that’s specific to the day. For example <em>(Tuesdays, please make appointment)</em></p>
+
+<p><strong>Open Hours</strong> </p>
+
+<p>This is similar to the <code>Open Dates</code> setting, add the time open, for example a line might read: <em>11am to 5pm</em> and another line could read <em>Open until 8pm on Fridays</em></p>
+
+<h5>Contact Information</h5>
+
+<p><strong>Address</strong> </p>
+
+<p>This is a google map powered search box that will add a pin automatically to the <strong>Explore Our Wineries</strong> page and will add a <em>directions</em> link to the winery sidebar.</p>
+
+<p><strong>Phone</strong> </p>
+
+<p>This displays in the sidebar on the winery page.</p>
+
+<p><strong>Website</strong> </p>
+
+<p>Here you can add a link to the winery page, the text will automatically be filled.</p>
+
+<h5>Adding content to events</h5>
+
+<p>Events have a few optional boxes to display information on the event page.</p>
+
+<p><strong>Event Date Start</strong><br/>Required, this displays on the homepage, sets the order of events, and displays on the event itself.</p>
+
+<p><strong>Event Date End</strong> </p>
+
+<p>Not required, but useful if an event happens over multiple days, such as a weekend.</p>
+
+<p><strong>Cost</strong> </p>
+
+<p>If the event has a cost, enter here.</p>
+
+<p><strong>Location</strong> </p>
+
+<p>The location of an event, text instead of a map is used so multiple locations or fuzzy information may be added.</p>
+
+<p><strong>Hours</strong> </p>
+
+<p>Text area to add information about the hours of the event.</p>
+
+<p><strong>Tickets Button</strong> </p>
+
+<p>If the event requires tickets, you may provide a link to the ticketing service here.</p>
+
+<p><strong>Event Introduction</strong> </p>
+
+<p>Short piece of content, this will be displayed on the homepage.</p>
+
+<p><strong>Event Content</strong> </p>
+
+<p>This is a standard WYSIWYG to add content and images on the event page.</p>
+
+<p><strong>Event Details</strong> </p>
+
+<p>Each of these sections is a good way to add structured content to an event. It has a title and a content area. It would be useful, say, to give a list of which wineries are involved in the event.</p>
+
+</body>
+</html>
+
