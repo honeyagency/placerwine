@@ -89,6 +89,68 @@
             "endpoint": 0
         },
         {
+            "key": "field_5a29d986a832d",
+            "label": "Amenity List",
+            "name": "amenity_list",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5a29d995a832e",
+                    "label": "Amenity Item",
+                    "name": "amenity_item",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "post_tag",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "add_term": 1,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "object",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_5a29d99da832f",
+                    "label": "Amenity Details (Optional)",
+                    "name": "amenity_details_optional",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
             "key": "field_59fe00678e7a2",
             "label": "Amenities",
             "name": "amenities",
@@ -624,5 +686,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1512690569
+    "modified": 1512692507
 }

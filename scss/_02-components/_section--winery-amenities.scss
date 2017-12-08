@@ -18,6 +18,52 @@
         }
     }
 
+    .amenity {
+        position: relative;
+
+        .amenity-details {
+            font-size: 0.7em;
+            display: block;
+        }
+
+        i {
+            display: none;
+        }
+
+        @include media($screen-sm) {
+            cursor: pointer;
+
+            .amenity-details {
+                background: white;
+                padding: 4px 8px;
+                border-radius: 2px;
+                position: absolute;
+                opacity: 0;
+                transition: opacity .2s ease;
+            }
+
+            i {
+                display: block;
+                height: 15px;
+                width: 15px;
+                color: map-get($red, main);
+                text-align: center;
+                line-height: 13px;
+                border-radius: 10px;
+                top: -5px;
+                right: -20px;
+                position: absolute;
+                font-size: 0.7em;
+            }
+
+            &:hover {
+                .amenity-details {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
     @include media($max-sm) {
         .icon-corkscrew {
             display: none;

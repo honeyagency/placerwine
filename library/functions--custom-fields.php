@@ -183,6 +183,16 @@ function prepareWineryFields()
     } else {
         $amenitieslist = null;
     }
+    if (have_rows('field_5a29d986a832d')) {
+        $amenityList = array();
+        while (have_rows('field_5a29d986a832d')) {
+            the_row();
+            $amenityList[] = array(
+                'amenity' => get_sub_field('field_5a29d995a832e'),
+                'details' => get_sub_field('field_5a29d99da832f'),
+            );
+        }
+    }
 
     if (have_rows('field_59fe148b19fce')) {
         $press = array();
@@ -224,7 +234,7 @@ function prepareWineryFields()
     }
 
     $deets = array(
-        'amenities' => $amenitieslist,
+        'amenities' => $amenityList,
         'varietals' => $varietals,
         'press'     => $press,
         'awards'    => $awards,
@@ -240,7 +250,8 @@ function prepareWineryFields()
     // print_r(get_field('field_5a04d1cb7aa7f'));
     $filter = array(
         'dates'     => get_field('field_5a04d1cb7aa7f'),
-        'amenities' => $amenitieslist,
+        // 'amenities' => $amenitieslist,
+        'amenities' => $amenityList,
     );
     $winery = array(
         'content' => $content,

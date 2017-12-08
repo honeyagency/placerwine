@@ -3,7 +3,9 @@
 	<div class="border--grid grid--one grid--sm-three-fourths dsk--flex flex--wrap justify--between">
 		<i class="icon-corkscrew inline-block" data-grunticon-embed></i>
 		<div class="block--amenities font--medium">
-			{% for amenity in winery.deets.amenities %}<span class="inline-block">{{amenity.name}}</span>{% if loop.last %}{% else %}<span class="spacing--horiz-half divider"> | </span>{% endif %}{% endfor %}
+			{% for amenity in winery.deets.amenities %}
+				<span class="inline-block amenity">{{amenity.amenity.name}} {% if amenity.details %}<i class="bg--white amenity-trigger color--brown-light">+</i>{% endif %} <span class="font--tiny color--black-faded amenity-details">{{amenity.details}}</span></span>{% if loop.last %}{% else %}<span class="spacing--horiz-half divider"> | </span>{% endif %}{% endfor %}
+
 		</div>
 	</div>
 </section>

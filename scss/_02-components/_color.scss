@@ -9,6 +9,9 @@
 .color--blue, .color--black {
     color: map-get($blue, dark);
 }
+.color--black-faded{
+    color: transparentize(map-get($blue, dark), .3);	
+}
 
 .color--red {
     color: map-get($red, main);
