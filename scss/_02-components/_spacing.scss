@@ -55,23 +55,30 @@
 .spacing--bot-4{padding-bottom: 4em * $grid;}
 
 .spacing--gutter-dsk {
+    @include media($screen-sm) {
+        padding-right: 0.7em * $grid;
+        padding-left: 0.7em * $grid;
+    }
 
-	@include media($screen-sm){
-	padding-right: .7em * $grid;
-	padding-left: .7em * $grid;
-}
 
     @include media($screen-sm) {
-	padding-right: 3em * $grid / 2;
-	padding-left: 3em * $grid / 2;
+        padding-right: 3em * $grid / 2;
+        padding-left: 3em * $grid / 2;
     }
 }
 
 .spacing--gutter-mob {
-	@include media($max-sm){
-	padding-right: .7em * $grid;
-	padding-left: .7em * $grid;
+    @include media($max-sm) {
+        padding-right: 0.7em * $grid;
+        padding-left: 0.7em * $grid;
+    }
 }
 
- 
+.spacing--gutter-social {
+    @include media($screen-sm) {
+        @include media($max-xl) {
+            padding-right: 0.7em * $grid;
+            padding-left: 0.7em * $grid;
+        }
+    }
 }

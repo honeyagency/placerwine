@@ -1,5 +1,6 @@
-<div class="block--header-social">
+<div class="block--header-social text--right spacing--gutter-social">
 	{% if  options.social.facebook %}<a class="hidden--tab" href="{{options.social.facebook.url}}" title="{{options.social.facebook.title}}" target="{{options.social.facebook.target}}"><i class="icon-social--facebook" data-grunticon-embed></i></a>{% endif %}
 	{% if  options.social.twitter %}<a class="hidden--tab" href="{{options.social.twitter.url}}" title="{{options.social.twitter.title}}" target="{{options.social.twitter.target}}"><i class="icon-social--twitter" data-grunticon-embed></i></a>{% endif %}
+	{% if options.social.instagram %}<a href="{{options.social.instagram.url}}" target="{{options.social.instagram.target}}" title="{{options.social.instagram.title}}"><i class="icon-social--instagram footer-social hidden--tab" data-grunticon-embed></i></a>{% endif %}
 	<a href="" class="toggle-search" id="toggleSearch"><i class="icon-social--search" data-grunticon-embed></i></a>
 </div>
