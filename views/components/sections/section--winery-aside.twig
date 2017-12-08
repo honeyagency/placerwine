@@ -32,4 +32,7 @@
 		{{winery.sidebar.phone}}
 	</div>
 	{% endif %}
+	{% if winery.sidebar.website %}
+		<a class="font--bold font--large color--red" href="{{winery.sidebar.website.url}}" title="{{winery.sidebar.website.title}}" target="{{winery.sidebar.website.target}}">Go To Website</a>
+	{% endif %}
 </aside>
