@@ -31,8 +31,10 @@
         }
 
         @include media($screen-sm) {
-            cursor: pointer;
-
+           
+&.hasdeets{
+     cursor: pointer;
+}
             .amenity-details {
                 background: white;
                 padding: 4px 8px;
@@ -51,7 +53,7 @@
                 line-height: 13px;
                 border-radius: 10px;
                 top: -5px;
-                right: -20px;
+                right: -15px;
                 position: absolute;
                 font-size: 0.7em;
             }
