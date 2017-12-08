@@ -124,8 +124,8 @@
                     "field_type": "select",
                     "allow_null": 0,
                     "add_term": 1,
-                    "save_terms": 0,
-                    "load_terms": 0,
+                    "save_terms": 1,
+                    "load_terms": 1,
                     "return_format": "object",
                     "multiple": 0
                 },
@@ -149,28 +149,6 @@
                     "maxlength": ""
                 }
             ]
-        },
-        {
-            "key": "field_59fe00678e7a2",
-            "label": "Amenities",
-            "name": "amenities",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "post_tag",
-            "field_type": "multi_select",
-            "allow_null": 0,
-            "add_term": 0,
-            "save_terms": 1,
-            "load_terms": 1,
-            "return_format": "id",
-            "multiple": 0
         },
         {
             "key": "field_5a04e5d3d6115",
@@ -686,5 +664,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1512692507
+    "modified": 1512693857
 }
