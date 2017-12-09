@@ -22,7 +22,7 @@
 		<div class="font--large font--bold">Where:</div>
 		<address>{{winery.sidebar.location.address}}</address>
 		<p class="font--tiny">
-			<a href="https://www.google.com/maps/place/{{winery.sidebar.location.address|replace(' ', '+')}}/@{{winery.sidebar.location.lat}},{{winery.sidebar.location.lng}}">get directions</a> | <a href="{{site.options.map}}">download map</a>
+			<a href="https://www.google.com/maps/place/{{winery.sidebar.location.address|replace(' ', '+')}}/@{{winery.sidebar.location.lat}},{{winery.sidebar.location.lng}}" target="_blank">get directions</a> | <a href="{{site.options.map}}">download map</a>
 		</p>
 	</div>
 	{% endif %}
