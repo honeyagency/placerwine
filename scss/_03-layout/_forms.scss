@@ -11,6 +11,54 @@ $formsuccesstextcolor: white;
 $formbuttonbackground: map-get($blue, dark);
 $formbuttoncolor: white;
 
+// Contsant contact reset
+div.ctct-form-embed form.ctct-form-custom div.ctct-form-field, .ctct-form-defaults, .div.ctct-form-embed {
+    margin: 0 !important;
+    font: unset !important;
+    color: unset !important;
+    padding: 0 !important;
+}
+
+form.ctct-form-custom input.ctct-form-element {
+    color: transparent !important;
+    box-shadow: none !important;
+    background-color: white !important;
+    color: $forminvalidbackground !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    box-sizing: border-box;
+    padding: 7px 12px;
+    transition: color .2s ease-in-out;
+    letter-spacing: 1px;
+
+    &::-webkit-input-placeholder {
+        transition: color .2s ease-in-out;
+        color: map-get($red, main);
+    }
+
+    &:-moz-placeholder {
+        transition: color .2s ease-in-out;
+
+        /* Firefox 18- */
+        color: map-get($red, main);
+    }
+
+    &::-moz-placeholder {
+        transition: color .2s ease-in-out;
+
+        /* Firefox 19+ */
+        color: map-get($red, main);
+    }
+
+    &:-ms-input-placeholder {
+        transition: color .2s ease-in-out;
+        color: map-get($red, main);
+    }
+}
+
 fieldset {
     background-color: transparent;
     border: 0;
@@ -106,7 +154,7 @@ select {
 //     border: none;
 // }
 
-.screenreader, .screen-reader-text {
+.screenreader, .screen-reader-text, .grecaptcha-badge {
     position: absolute;
     left: -10000px;
     top: auto;
@@ -184,8 +232,36 @@ div.wpcf7-mail-sent-ok {
 }
 
 button, [type="submit"] {
-    background-color: $formbuttonbackground;
-    color: $formbuttoncolor;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    background-color: $formbuttonbackground !important;
+    color: $formbuttoncolor !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+}
+
+.ctct-form-footer {
+    display: none !important;
+}
+
+.ctct-form-field {
+    width: 70% !important;
+    display: inline-block !important;
+}
+
+.ctct-form-button {
+    width: auto !important;
+    display: inline-block !important;
+    background-color: transparent !important;
+    letter-spacing: 0 !important;
+    font-weight: 900;
+    text-transform: none !important;
+}
+.ctct-form-label{
+        text-transform: uppercase !important;
+    font-size: 1rem !important;
+    letter-spacing: 1px !important;
+    color: white !important;
+    &:before{
+        display: none!important;
+    }
+
 }

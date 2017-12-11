@@ -65,4 +65,6 @@ jQuery(document).ready(function($) {
         $(this).attr('action', $(this).attr('action') + $('#amenity_id').val());
         $(this).submit();
     });
+
 });
+
