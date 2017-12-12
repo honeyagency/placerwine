@@ -39,6 +39,7 @@ function prepareSiteOptions()
         'area_2_title' => get_field('field_5a049450a7961', 'options'),
         'area_2_pages' => get_field('field_5a049471a7962', 'options'),
         'privacy'      => get_field('field_5a049a134307b', 'options'),
+        'credit'      => get_field('field_5a2f1d188a83e', 'options'),
     );
     $options = array(
         'social'  => $social,
