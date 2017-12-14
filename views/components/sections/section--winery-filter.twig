@@ -4,6 +4,8 @@
 		<select name="varietal_id" id="varietal_id" class="grid--sm-third icon-angle-down" >
 			{% if currentFilter != null %}
 				<option>{{currentFilter}}</option>
+			{% else %}
+				<option>Fiter by varietal</option>
 			{% endif %}
 			{% for varietal in varietals %}
 				<option value="{{varietal.term_id}}">{{varietal.name}}</option>
