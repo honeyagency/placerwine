@@ -1,11 +1,11 @@
 {
-    "key": "group_5a29c64b13b22",
-    "title": "Varietals",
+    "key": "group_5a382411b890a",
+    "title": "Day Trips",
     "fields": [
         {
-            "key": "field_5a29c64cb68e3",
-            "label": "Varietals",
-            "name": "varietals",
+            "key": "field_5a382411bb695",
+            "label": "Day Trips",
+            "name": "day_trips",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -22,9 +22,9 @@
             "button_label": "Add Varietal",
             "sub_fields": [
                 {
-                    "key": "field_5a29c656b68e4",
-                    "label": "Varietal Name",
-                    "name": "varietal_name",
+                    "key": "field_5a382411bcb9c",
+                    "label": "Day Trip Name",
+                    "name": "day_trip_name",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -41,9 +41,9 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5a29c65cb68e5",
-                    "label": "Varietal Content",
-                    "name": "varietal_content",
+                    "key": "field_5a382411bcc15",
+                    "label": "Day Trip Content",
+                    "name": "day_trip_content",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -67,7 +67,7 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "42"
+                "value": "48"
             }
         ]
     ],
@@ -79,5 +79,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1513629299
+    "modified": 1513629290
 }
