@@ -15,20 +15,29 @@
 
             @include media($screen-xs) {}
 
+
             @include media($screen-sm) {
                 font-size: 2rem;
             }
 
-            @include media($screen-md) {
-                
-            }
+
+            @include media($screen-md) {}
+
 
             @include media($screen-lg) {
                 font-size: 2.2rem;
             }
 
-            @include media($screen-xl) {font-size: 2.5rem;}
+
+            @include media($screen-xl) {
+                font-size: 2.5rem;
+            }
         }
+    }
+
+    h5 {
+        font-size: 1rem;
+        margin-top: 1em;
     }
 }
 

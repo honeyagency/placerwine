@@ -11,9 +11,17 @@
 		</section>
 		<section class="section--winery-list spacing--gutter max-wrap margin--center">
 			{% for trip in trips %}
-				<div class="block--winery grid--one flex flex--wrap justify--between align--items-start border--1 spacing--vert-2">
-					<h2 class="grid--one grid--sm-fourth font--standard color--brown-dark">{{trip.title}}</h2>
-					<div class="winery--details grid--one grid--sm-three-fourths font--medium">{{trip.content}}</div>
+				<div class="block--winery grid--one flex flex--wrap justify--between align--items-baseline border--1 spacing--vert-2">
+					<div class="grid--one grid--sm-third">
+					<h2 class="font--standard color--brown-dark">{{trip.title}}</h2></div>
+					{% if trip.subtitle %}
+					<div class="grid--one grid--sm-two-thirds hidden--mob"></div>
+					
+					<div class="grid--one grid--sm-third">
+						<h5 class="font--smaller text--uppercase color--gray">{{trip.subtitle}}</h5>
+					</div>
+				{% endif %}
+					<div class="winery--details grid--one grid--sm-two-thirds font--medium ">{{trip.content}}</div>
 				</div>
 			{% endfor %}
 		</section>

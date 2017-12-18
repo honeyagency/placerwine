@@ -287,8 +287,9 @@ function prepareDayTripPage()
         while (have_rows('field_5a382411bb695')) {
             the_row();
             $trips[] = array(
-                'title'   => get_sub_field('field_5a382411bcb9c'),
-                'content' => get_sub_field('field_5a382411bcc15'),
+                'title'    => get_sub_field('field_5a382411bcb9c'),
+                'subtitle' => get_sub_field('field_5a383394aec07'),
+                'content'  => get_sub_field('field_5a382411bcc15'),
             );
         }
     }
