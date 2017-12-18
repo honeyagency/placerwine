@@ -80,6 +80,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_5a38229099c3a",
+            "label": "Map File",
+            "name": "map_file",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_59e8db84815ec",
             "label": "Default Site Image",
             "name": "default_site_image",
@@ -305,5 +324,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1512690565
+    "modified": 1513628320
 }

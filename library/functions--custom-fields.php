@@ -14,6 +14,7 @@ function prepareSiteOptions()
         $defaultImage = null;
     }
     $defaults = array(
+        'map'      => get_field('field_5a38229099c3a', 'options'),
         'image'    => $defaultImage,
         'location' => get_field('field_59fe3e0520533', 'options'),
         '404'      => get_field('field_59e8dbbd815ed', 'options'),
@@ -39,7 +40,7 @@ function prepareSiteOptions()
         'area_2_title' => get_field('field_5a049450a7961', 'options'),
         'area_2_pages' => get_field('field_5a049471a7962', 'options'),
         'privacy'      => get_field('field_5a049a134307b', 'options'),
-        'credit'      => get_field('field_5a2f1d188a83e', 'options'),
+        'credit'       => get_field('field_5a2f1d188a83e', 'options'),
     );
     $options = array(
         'social'  => $social,
