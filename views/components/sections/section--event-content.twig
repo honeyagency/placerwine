@@ -1,11 +1,12 @@
 <section class="seciton--winery-content order--0 grid--one grid--sm-three-fifths">
 	<h1>{{post.title}}</h1>
 	<p class="font--large">{{event.description}}</p><br>
+	
+	{# {{event|print_r}} #}
+	{{event.content}}
 	{% if event.tickets %}
 		<div class="grid--tab-half margin--top-2">
 			<a class="font--large inline-block font--bold icon-underline bg--red color--white text--center spacing--vert-half spacing--horiz-1" href="{{event.tickets.url}}" title="{{event.tickets.title}}" target="{{event.tickets.target}}">{{event.tickets.title}}</a>
 		</div>
 	{% endif %}
-	{# {{event|print_r}} #}
-	{{event.content}}
 </section>
