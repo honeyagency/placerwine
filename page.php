@@ -54,6 +54,9 @@ if (is_page('home')) {
 }elseif (is_page('varietals')) {
     $context['varietals'] = prepareVarietalsPage();
 
+}elseif (is_page('day-trips')) {
+    $context['trips'] = prepareDayTripPage();
+
 }
 
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

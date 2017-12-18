@@ -279,3 +279,18 @@ function prepareVarietalsPage()
     }
     return $varietals;
 }
+
+function prepareDayTripPage()
+{
+    if (have_rows('field_5a382411bb695')) {
+        $trips = array();
+        while (have_rows('field_5a382411bb695')) {
+            the_row();
+            $trips[] = array(
+                'title'   => get_sub_field('field_5a382411bcb9c'),
+                'content' => get_sub_field('field_5a382411bcc15'),
+            );
+        }
+    }
+    return $trips;
+}

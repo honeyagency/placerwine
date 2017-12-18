@@ -19,7 +19,7 @@
             "min": 0,
             "max": 0,
             "layout": "block",
-            "button_label": "Add Varietal",
+            "button_label": "Add Trip",
             "sub_fields": [
                 {
                     "key": "field_5a382411bcb9c",
@@ -79,5 +79,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1513629290
+    "modified": 1513629578
 }
