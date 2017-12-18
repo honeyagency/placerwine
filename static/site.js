@@ -1,4 +1,19 @@
 jQuery(document).ready(function($) {
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function() {
+            var context = this,
+                args = arguments;
+            var later = function() {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    };
     var myLazyLoad = new LazyLoad({
         // example of options object -> see options section
         threshold: 500,
@@ -9,14 +24,11 @@ jQuery(document).ready(function($) {
     function toggleSearch() {
         $body = $('body');
         $search = $('.block--search-modal');
-        if ($body.hasClass('search-is-open')) {
-
-        }else{
+        if ($body.hasClass('search-is-open')) {} else {
             $('.search-field').focus();
         }
         $body.toggleClass('search-is-open');
         $search.toggleClass('this-is-open');
-        
     }
     $toggle = $('.toggle-search');
     $toggle.on('click touchstart', function(event) {
@@ -66,5 +78,39 @@ jQuery(document).ready(function($) {
         $(this).submit();
     });
 
-});
+    function toTop(e) {
+        var body = document.body,
+            html = document.documentElement;
+        var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+        var $toTop = $('.to-top');
+        var $theWin = $(document).scrollTop();
+        console.log('run');
+        if (height > 6000) {
+            if ($theWin > 3000) {
+                $toTop.addClass('showit');
 
+            } else {
+                $toTop.removeClass('showit');
+            }
+        }
+    }
+    var toTopDebounce = debounce(function(e) {
+        toTop(e);
+    }, 250);
+    window.addEventListener('scroll', toTopDebounce);
+
+    jQuery(function() {
+        jQuery('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = jQuery(this.hash);
+                target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    jQuery('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+});

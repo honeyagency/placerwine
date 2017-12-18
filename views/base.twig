@@ -5,7 +5,7 @@
 </head>
 {% endblock %}
 <body class="{{body_class}} bg--brown-light" data-template="base.twig">
-
+<a name="top"></a>
 	{% block header %}
 		{% include 'components/header.twig' %}
 	{% endblock %}
@@ -15,7 +15,8 @@
 		{% block content %}
 			Sorry, no content
 		{% endblock %}
-
+<a href="#top" class="to-top  text--uppercase color--white bg--green">
+	<i class="icon-tab color--white font--bold font--medium"><span>To Top</span></i></a>
 </main>
 {% block footer %}
 	{% include 'footer.twig' %}

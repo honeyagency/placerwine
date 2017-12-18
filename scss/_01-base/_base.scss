@@ -1,3 +1,49 @@
-img{
-	max-width: 100%;
+img {
+    max-width: 100%;
+}
+
+.to-top {
+    z-index: 999999;
+    position: fixed;
+    transition: bottom 0.2s $base-cubic;
+
+    &.showit {
+        transition: bottom 0.2s $base-cubic;
+        bottom: -5px;
+    }
+
+    bottom: -55px;
+    right: 0.7em * $grid;
+
+    @include media($screen-sm) {
+        right: 3em * $grid / 2;
+    }
+
+
+    .icon-tab {
+        padding: 22px 0px;
+        display: inline-block;
+        width: 100px;
+        transform: rotate(180deg);
+
+
+
+        @include media($max-sm) {
+            padding: 16px 0;
+            width: 75px;
+
+            span {
+                font-size: .9rem;
+            }
+        }
+        @include media($screen-xl) {}
+    }
+
+    span {
+        transform: rotate(180deg);
+        position: relative;
+        display: block;
+        text-align: center;
+        line-height: 0;
+    }
 }
