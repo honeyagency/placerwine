@@ -91,9 +91,13 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
 function getSinglePost($posttype = null)
 {
     $postId = get_the_id();
+    if (!empty(get_post_thumbnail_id())) {
+        $attachedimage = new TimberImage(get_post_thumbnail_id());
+    } else {
+        $attachedimage = null;
+    }
 
-    $attachedimage = new TimberImage(get_post_thumbnail_id());
-    $categories    = get_the_category();
+    $categories = get_the_category();
 
     // setup an array to change the post data returned
     $singlePostArray = array(
