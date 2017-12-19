@@ -1,7 +1,6 @@
 {% extends "base.twig" %}
 {% block content %}
 {% if post.thumbnail %}<section class="section--single-header spacing--gutter-dsk margin--center max-wrap"><img src="{{post.thumbnail}}" width="100%"></section><div class="flex flex--wrap justify--between align--items-start  winery-wrap margin--center spacing--gutter margin--vert">{% include 'components/blocks/block--breadcrumbs.twig' %}</div>{% else %}<section class="section--single-header spacing--gutter spacing--vert-1 spacing--dsk-vert-2 bg--brown-faded margin--center max-wrap">{% include 'components/blocks/block--breadcrumbs.twig' %}</section>{% endif %}
-<div class="max-wrap margin--center spacing--gutter margin--horiz-1">{% include 'components/blocks/block--breadcrumbs.twig' %}</div>
 <article class="flex flex--wrap justify--between align--items-start spacing--dsk-vert-4 winery-wrap margin--center spacing--gutter">
 	{% include 'components/sections/section--event-aside.twig' %}
 	{% include 'components/sections/section--event-content.twig' %}
