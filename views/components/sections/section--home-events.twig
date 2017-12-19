@@ -6,7 +6,7 @@
 	{% for event in home.events.posts %}
 		<div class="block--home-event grid--one grid--sm-third">
 			<span class="icon-tab color--white font--bold font--medium"><span>{{event.event.start_date|date('M d')}} {% if event.event.end_date %}- {{event.event.end_date|date('d')}}{% endif %}</span></span>
-			<img src="{{event.image}}" class="">
+			<img src="{{event.image|resize(876,584)}}" class="">
 			<div class="spacing--gutter-mob spacing--horiz-1 spacing--vert-half spacing--dsk-vert-1 margin--bot-1 font--medium-dsk color--black">
 				<h4>{{event.title}}</h4>
 				{{event.event.description}}<br>
