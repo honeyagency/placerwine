@@ -13,7 +13,7 @@
 		{% endfor %}
 	{% endif %}
 {% else %}
-	{% for event in events %}
+	{% for event in winetrailevents %}
 			
 			<div class="block--child grid--one md--flex flex--wrap align--items-center spacing--vert-1 spacing--dsk-vert-2 {% if loop.index is even %}justify--end{% else %}justify--start{% endif %}">
 				<img class="grid--one grid--md-two-thirds order--1" alt="{{event.image.alt}}" data-original="{{event.image.src|resize(873,580)}}">
