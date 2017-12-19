@@ -91,7 +91,7 @@ function prepareHomepageFields()
     );
     $eventDisplay = get_field('field_59e9271d9bf06');
     if ($eventDisplay == 'recent') {
-        $events = getCustomPosts('event', 3, null, 'date', null, null);
+        $events = getCustomPosts('event', 3, 'wine-trail-events', 'date', null, null);
     } else {
         if (have_rows('field_59e9276e9bf07')) {
             $events = array();
