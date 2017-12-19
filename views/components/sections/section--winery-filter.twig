@@ -5,7 +5,7 @@
 			{% if currentFilter != null %}
 				<option>{{currentFilter}}</option>
 			{% else %}
-				<option>Fiter by varietal</option>
+				<option>Filter by varietal</option>
 			{% endif %}
 			{% for varietal in varietals %}
 				<option value="{{varietal.term_id}}">{{varietal.name}}</option>
