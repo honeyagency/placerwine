@@ -8,7 +8,9 @@
 			{% if currentFilter != null %}<h3 class="spacing--vert-1">Currently filtering by all wineries with {{currentFilter.name}}. <a href="{{site.url}}/explore-our-wineries/">View All Wineries</a></h3>{% endif %}
 				{% if dateFilter != null %}<h3 class="spacing--vert-1">Currently filtering by all wineries open <span class="text--capitalize">{{dateFilter}}</span>. <a href="{{site.url}}/explore-our-wineries/">View All Wineries</a></h3>{% endif %}
 		</section>
+		<section>
 		{% include 'components/sections/section--winery-map.twig' %}
 		{% include 'components/sections/section--winery-list.twig' %}
+	</section>
 	</article>
 {% endblock %}

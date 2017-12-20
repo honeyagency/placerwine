@@ -94,6 +94,21 @@ jQuery(document).ready(function($) {
             }
         }
     }
+$('#wineryuitoggle').on('click touchstart', function(event) {
+    event.preventDefault();
+    $('.shortlist').slideToggle(400);
+    $('#winerieslist').slideToggle(400);
+        $('.shortlist').toggleClass('active');
+    $('#winerieslist').toggleClass('active');
+    var longlist = $('#wineryuitoggle').attr('data-longtext');
+    var shortlist = $('#wineryuitoggle').attr('data-shorttext');
+    if ($('.shortlist').hasClass('active')) {
+    $('#wineryuitoggle').text(longlist);    
+    }else{
+        $('#wineryuitoggle').text(shortlist);
+    }
+
+});
     var toTopDebounce = debounce(function(e) {
         toTop(e);
     }, 250);

@@ -1,4 +1,4 @@
-<section class="section--winery-filter margin--top-2">
+<section class="section--winery-filter margin--top-2  margin--bot-2">
 
 	<form id="wineryfilter" action="{{site.url}}/explore-our-wineries/?filter=varietal_id" method="get" accept-charset="utf-8">
 		<select name="varietal_id" id="varietal_id" class="grid--sm-third icon-angle-down" >
@@ -23,5 +23,10 @@
 		<a class="color--black" href="?date_id=saturday">Saturday</a><span class="hidden--mob spacing--horiz-half">|</span>
 		<a class="color--black" href="?date_id=sunday">Sunday</a>
 	</div>
+	{# <div style="column-count:3;" class="text--center shortlist ">
+{% for winery in wineries %}
+<a href="{{winery.link}}" class="color--brown-dark font--large block">{{winery.title}}</a>
+{% endfor %}
+	</div>
+	<a class="text--right color--brown-dark font--smaller text--uppercase block" id="wineryuitoggle" data-shorttext="Winery Quick Search" data-longtext="Close" href="">Winery Quick Search</a> #}
 </section>
-</script>
