@@ -24,6 +24,7 @@
         .amenity-details {
             font-size: 0.7em;
             display: block;
+            z-index: 99;
         }
 
         i {
@@ -31,10 +32,10 @@
         }
 
         @include media($screen-sm) {
-           
-&.hasdeets{
-     cursor: pointer;
-}
+            &.hasdeets {
+                cursor: pointer;
+            }
+
             .amenity-details {
                 background: white;
                 padding: 4px 8px;

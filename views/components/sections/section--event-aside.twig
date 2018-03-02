@@ -2,7 +2,7 @@
 
 	<div class="margin--bot-1 grid--tab-half">
 		{% if event.end_date %}<div class="font--large font--bold">Dates:</div>{% else %}<div class="font--large font--bold">Date:</div>{% endif %}
-		<span class=""><span>{{event.start_date|date('M d')}} {% if event.end_date %}- {{event.end_date|date('d')}}{% endif %}</span></span>
+		<span class=""><span>{{event.start_date|date('M d')}} {% if event.end_date %}- {% if event.start_date|date('M') == event.end_date|date('M') %}{{event.end_date|date('d')}}{% else %}{{event.end_date|date('M d')}}{% endif %}{% endif %}</span></span>
 	</div>
 	{% if event.hours %}
 		<div class="margin--bot-1 grid--tab-half">

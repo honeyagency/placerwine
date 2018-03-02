@@ -18,7 +18,13 @@
 			<div class="block--child grid--one md--flex flex--wrap align--items-center spacing--vert-1 spacing--dsk-vert-2 {% if loop.index is even %}justify--end{% else %}justify--start{% endif %}">
 				<img class="grid--one grid--md-two-thirds order--1" alt="{{event.image.alt}}" data-original="{{event.image.src|resize(873,580)}}">
 				<div class="child--title bg--brown-light inline-block spacing--vert-1 spacing--dsk-horiz-2 spacing--dsk-vert-2 grid--md-third-max border-box {% if loop.index is even %}order--0{% else %}order--1{% endif %}">
-						<span class="color--black  font--bold font--medium"><span>{{event.event.start_date|date('M d')}}{% if event.event.end_date %}&ndash;{{event.event.end_date|date('d')}}{% endif %}</span></span>
+						<span class="color--black  font--bold font--medium"><span>{% if event.event.end_date %}
+					{% if event.event.start_date|date('M') == event.event.end_date|date('M') %}
+						{{event.event.start_date|date('M d')}} - {{event.event.end_date|date('d')}}
+					{% else %}
+						<div style="font-size:.9em;">{{event.event.start_date|date('M d')}} - {{event.event.end_date|date('M d')}}</div>
+					{% endif %}
+				{% endif %}</span></span>
 					<h2>{{ event.title }}</h2>
 					<a class="font--large font--bold button" href="{{ event.link }}">Read More</a>
 				</div>

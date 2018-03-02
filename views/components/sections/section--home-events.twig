@@ -5,7 +5,15 @@
 	</div>
 	{% for event in home.events.posts %}
 		<div class="block--home-event grid--one grid--sm-third">
-			<span class="icon-tab color--white font--bold font--medium"><span>{{event.event.start_date|date('M d')}} {% if event.event.end_date %}- {{event.event.end_date|date('d')}}{% endif %}</span></span>
+			<span class="icon-tab color--white font--bold font--medium"><span>
+				{% if event.event.end_date %}
+					{% if event.event.start_date|date('M') == event.event.end_date|date('M') %}
+						{{event.event.start_date|date('M d')}} - {{event.event.end_date|date('d')}}
+					{% else %}
+						<div style="font-size:.9em;">{{event.event.start_date|date('n/d')}} - {{event.event.end_date|date('n/d')}}</div>
+					{% endif %}
+				{% endif %}
+			</span></span>
 			<img src="{{event.image|resize(876,584)}}" class="">
 			<div class="spacing--gutter-mob spacing--horiz-1 spacing--vert-half spacing--dsk-vert-1 margin--bot-1 font--medium-dsk color--black">
 				<h4>{{event.title}}</h4>

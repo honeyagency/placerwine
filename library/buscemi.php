@@ -44,7 +44,7 @@ function jquery_enqueue()
 {
     wp_dequeue_script('jquery');
     wp_deregister_script('jquery');
-    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", false, null);
+    wp_register_script('jquery', "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", false, null);
 }
 
 function localInstall()
@@ -62,11 +62,11 @@ function localInstall()
 function buscemi_scripts()
 {
     wp_enqueue_script('jquery');
-    if (localInstall() == true) {
-        $reloadScript = 'http://localhost:35729/livereload.js';
-        wp_register_script('livereload', $reloadScript, null, false, true);
-        wp_enqueue_script('livereload');
-    }
+    // if (localInstall() == true) {
+    //     $reloadScript = 'http://localhost:35729/livereload.js';
+    //     wp_register_script('livereload', $reloadScript, null, false, true);
+    //     wp_enqueue_script('livereload');
+    // }
 
     wp_register_script('lazyload', get_template_directory_uri() . '/app/vendors/lazyload.min.js', null, false, true);
     wp_enqueue_script('lazyload');

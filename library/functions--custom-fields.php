@@ -139,6 +139,7 @@ function prepareEventFields()
         'location'    => get_field('field_5a05daf8ac659'),
         'hours'       => get_field('field_5a05db04ac65a'),
         'tickets'     => get_field('field_5a05daccac657'),
+        'eventlink'   => get_field('field_5a3b0069d2e8e'),
     );
     return $event;
 

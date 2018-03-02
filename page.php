@@ -50,13 +50,16 @@ if (is_page('home')) {
     ));
 } elseif (is_page('events')) {
     $context['winetrailevents'] = getCustomPosts('event', -1, 'wine-trail-events', 'date', null, null);
-    $context['regionalevents']  = getCustomPosts('event', -1, 'regional-events', 'date', null, null, null);
+
+} elseif (is_page('regional-events')) {
+    $context['regionalevents'] = getCustomPosts('event', -1, 'regional-events', 'date', null, null, null);
 } elseif (is_page('varietals')) {
     $context['varietals'] = prepareVarietalsPage();
 
+
 } elseif (is_page('day-trips')) {
-    $context['trips'] = prepareDayTripPage();
+        $context['trips'] = prepareDayTripPage();
 
-}
+    }
 
-Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
+    Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

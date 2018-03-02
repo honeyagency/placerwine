@@ -7,21 +7,7 @@
 		</section>
 			<div class="max-wrap margin--center spacing--gutter margin--horiz-1">{% include 'components/blocks/block--breadcrumbs.twig' %}</div>
 		{% include 'components/sections/section--child-blocks.twig' with {'eventdisplay': true} %}
-<section class="section--home-events justify--between flex flex--wrap margin--center max-wrap spacing--gutter">
-	<h1 class="text--center grid--one margin--bot-1">Regional Events</h1>
-	{% for event in regionalevents %}
-		<div class="block--home-event grid--one grid--sm-third">
-			<span class="icon-tab color--white font--bold font--medium"><span>{{event.event.start_date|date('M d')}} {% if event.event.end_date %}- {{event.event.end_date|date('d')}}{% endif %}</span></span>
-			<div class="bg--brown-faded spacing--vert-1 spacing--horiz-1"><br><br><h4>{{event.title}}</h4></div>
-			<div class="spacing--gutter-mob spacing--horiz-1 spacing--vert-half spacing--dsk-vert-1 margin--bot-1 font--medium-dsk color--black">
-			
-				
-				{% if event.event.description %}{{event.event.description}}<br>{% endif %}
-				<a href="{{event.link}}">Read More</a>
-			</div>
-		</div>
-	{% endfor %}
-</section>
+
 		
 	</article>
 {% endblock %}

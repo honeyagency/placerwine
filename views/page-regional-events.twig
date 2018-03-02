@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+{% block content %}
+
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<section class="section--page-header spacing--vert-2">
+			<h1 class="article-h1 text--center">{{post.post_title}}</h1>
+		</section>
+			<div class="max-wrap margin--center spacing--gutter margin--horiz-1 margin--bot-1">{% include 'components/blocks/block--breadcrumbs.twig' %}</div>
+		
+<section class="section--home-events justify--between flex flex--wrap margin--center max-wrap spacing--gutter">
+
+	{% for event in regionalevents %}
+		<div class="block--home-event grid--one grid--sm-third">
+			<span class="icon-tab color--white font--bold font--medium"><span>{{event.event.start_date|date('M d')}} {% if event.event.end_date %}- {{event.event.end_date|date('d')}}{% endif %}</span></span>
+			<div class="bg--brown-faded spacing--vert-1 spacing--horiz-1"><br><br><h4>{{event.title}}</h4>				
+				{% if event.event.description %}{{event.event.description}}<br>{% endif %}
+				<a target="_blank" href="{{event.event.eventlink}}">Read More</a></div>
+			<div class="spacing--gutter-mob spacing--horiz-1 spacing--vert-half spacing--dsk-vert-1 margin--bot-1 font--medium-dsk color--black">
+			
+
+			</div>
+		</div>
+	{% endfor %}
+</section>
+		
+	</article>
+{% endblock %}
